@@ -39,7 +39,7 @@ bindsym $mod+q kill
 #bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id dmenu_run -b  -fn 'Lucida MAC-10' -nb '#111111' -nf '#555555' -sb '#111111' -sf '#00aadb'
+bindsym $mod+p exec --no-startup-id dmenu_run -b  -fn 'Lucida MAC-10' -nb '#111111' -nf '#ffffff' -sb '#111111' -sf '#c80000'
 
 # CHANGING BORDER STYLE
 bindsym $mod+t border normal
