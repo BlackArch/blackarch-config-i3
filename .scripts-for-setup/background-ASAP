@@ -4,6 +4,6 @@ sleep 1 &&
 mkdir ~/.fehbg &&
 sleep 1 &&
 mv blackarch-wallpaper-simple.png ~/.fehbg/ &&
-feh --bg-scale ~/.feh/blackarch-wallpaper-simple.png &&
+feh --bg-scale ~/.fehbg/blackarch-wallpaper-simple.png &&
 exit
 
