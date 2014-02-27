@@ -1,9 +1,9 @@
 #!/bin/bash
 wget https://raw.github.com/t60r/blackarch-site/master/images/blackarch-wallpaper-simple.png
 sleep 1 &&
-mkdir ~/.fehbg &&
+mkdir ~/.fehBACK &&
 sleep 1 &&
-mv blackarch-wallpaper-simple.png ~/.fehbg/ &&
-feh --bg-scale ~/.feh/blackarch-wallpaper-simple.png &&
+mv blackarch-wallpaper-simple.png ~/.fehBACK/ &&
+feh --bg-scale ~/.fehBACK/blackarch-wallpaper-simple.png &&
+echo "feh --bg-scale ~/.fehBACK/blackarch-wallpaper-simple.png" > ~/.fehbg &&
 exit
-

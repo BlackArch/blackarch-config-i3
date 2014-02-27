@@ -1,6 +1,3 @@
-
-#dkeg 2013;i3 config file (v4) ##
-
 set $mod Mod4
 #set $MOD MOD1
 
@@ -8,23 +5,23 @@ set $mod Mod4
 #set Mode_switch $MOD5
 
 #default, floating, tabbed
-# new container tabbed
+#new container tabbed
 
 # TOGGLE FLOATING / TILING
 #bindsym $MOD+SHIFT+t floating toggle
 
-# new window default border
+#new window default border
 #new_window 1pixel
 new_window normal 
 #new_float 1pixel
-new_float normal 
+new_float none
 
 # HIDE EDGE BORDERS
 #hide_edge_borders <none|vertical|horizontal|both>
 hide_edge_borders both 
 
 # font for window titles. ISO 10646 = Unicode
-font pango:Lucida MAC 10 
+font pango:Dejavu Sans Mono:10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -39,7 +36,7 @@ bindsym $mod+q kill
 #bindsym $mod+Shift+Q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+p exec --no-startup-id dmenu_run -b  -fn 'Lucida MAC-10' -nb '#111111' -nf '#ffffff' -sb '#111111' -sf '#c80000'
+bindsym $mod+p exec --no-startup-id dmenu_run -b  -fn 'Dejavu Sans Mono:10' -nb '#111111' -nf '#ffffff' -sb '#111111' -sf '#c80000'
 
 # CHANGING BORDER STYLE
 bindsym $mod+t border normal
@@ -74,16 +71,7 @@ for_window [title="Xfce-notifyd"] floating enable
 for_window [class="Leafpad"] floating enable 
 for_window [class="ZSNES"] floating enable
 assign [instance="mousepad|leafpad"] $WS3
-
 bindsym $MOD+Tab focus right
-
-# SCRATCHPAD CREATE
-
-# SCRATCHPAD SHOW
-bindsym $MOD+plus scratchpad show
-
-# OPEN TERMINAL HERE (not working yet)
-#bindsym $MOD+n exec $HOME/bin/shell.sh
 
 # HANDLE POPUPS
 #popup_during_fullscreen smart
@@ -159,11 +147,6 @@ mode "resize" {
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt 
-	# arrow keys #        
-	# bindsym 113 right
-#        bindsym 116 up 
-#        bindsym 111 left 
-#        bindsym 114 down 
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -171,6 +154,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
 
 #EXAMPLE USING THE i3 bar
 # Create Log out, Reboot, Poweroff bindings
@@ -195,25 +179,14 @@ bindsym Print exec scrot 'Screenshot - %Y-%m-%d--%_$wx$h_scrot.png' -e 'mv $f ~/
 # colors
 
 # class                 border  backgr.    text
-## LIME GREEN ACTIVE BORDER
 client.focused			#484848 #c80000  #000000
-## BLUE ACTIVE BORDER  
-#client.focused			#2b6cc4 #2b6cc4	 #111111
-## RED ACTIVE BORDER
-#client.focused			#bf3f34 #bf3f34	 #111111
-## LIGHTER RED ACTIVE BORDER
-#client.focused			#cc5555 #cc5555  #111111
 client.unfocused		#444444 #282828  #c80000
 client.focused_inactive #444444 #444444  #2c2c2f
 client.urgent			#383a3b #383a3b  #ee0000
 
 
 ###  ADDED KEY BINDINGS  ###
-bindsym $MOD+SHIFT+f exec thunar
 bindsym $MOD+SHIFT+Return exec xterm
-#bindsym $MOD+SHIFT+x exec i3lock -c 424242 -n
-bindsym $MOD+SHIFT+x exec i3lock -d -i /home/merkin/wallpapers/arch_linux_wallpaper_by_wavering_radiant-d6ivbsy.png #-n
-#bindsym $MOD+SHIFT+b exec --no-startup-id iceape 
 bindsym $MOD+SHIFT+b exec --no-startup-id firefox
 
 # VOLUME ADJUSTMENT
@@ -227,32 +200,20 @@ bar {
 	status_command i3status 
 	position top
 	workspace_buttons yes
-	font pango:Lucida MAC 10 
-	  colors {
-	  	statusline	#999999
-		background	#252525
-			
-			#class                 #	border 		backgrd 	text
+	font pango:Dejavu Sans Mono 10
+	colors {
+	  		statusline	#999999
+			background	#252525
+			#class              border 		backgrd 	text
 			focused_workspace  #292929 		#c80000		#000000
-			active_workspace   #252525 		#252525 	#282828
-			inactive_workspace #252525 		#252525		#c80000
-			urgent_workspace   #252525 		#252525 	#00c800
-			 
- 
-			# class                 	border 		backgrd 	text
-			  
-
 			active_workspace   #252525 		#252525 	#282828
 			inactive_workspace #252525 		#252525		#c80000
 			urgent_workspace   #252525 		#252525 	#00c800
 			}
 }
-# class                 	border 		backgrd 	text
  
 ## BACKGROUND OPTIONS (STARTED IN .XINITRC)
 
 # AUTOSTART
-# exec compositer.sh
-# exec --no-startup-id xterm -e tmux
 exec --no-startup-id xset dpms 600
 exec --no-startup-id sh ~/.fehbg
