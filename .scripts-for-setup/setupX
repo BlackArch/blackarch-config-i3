@@ -9,4 +9,10 @@ pacman -S xorg-server xorg-server-utils xorg-xinit xterm i3-wm i3status dmenu tt
 X -configure && sleep 4 &&
 mv xorg.conf.new xorg.conf &&
 cp /etc/skel/.xinitrc ~ &&  	## Still needs exec i3 + misc things \\ will add later
+sleep 1 &&
+wget https://raw.github.com/t60r/i3-blackarch/master/.i3/config &&
+sleep 2 &&
+mkdir ~/.i3 &&
+cp config ~/.i3/config &&
+rm config &&
 exit

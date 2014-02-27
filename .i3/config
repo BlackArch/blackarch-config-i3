@@ -252,6 +252,7 @@ bar {
 ## BACKGROUND OPTIONS (STARTED IN .XINITRC)
 
 # AUTOSTART
-exec compositer.sh
-exec --no-startup-id xterm -e tmux
+# exec compositer.sh
+# exec --no-startup-id xterm -e tmux
 exec --no-startup-id xset dpms 600
+exec --no-startup-id sh ~/.fehbg
