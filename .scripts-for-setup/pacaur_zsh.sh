@@ -27,4 +27,6 @@ sleep 2 &&
 wget https://raw.github.com/i3-Arch/i3config/master/zshrc &&
 mv zshrc ~/.zshrc &&
 chsh -s $(which zsh) &&
+echo " CLOSE OPEN TERMINALS, AND RE-OPEN TO SEE NEW SHELL / CONFIG ! "
+sleep 3 &&
 exit
