@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#This builds pacaur, and sets up oh-my-zsh
-#
+# This builds pacaur, and sets up oh-my-zsh
+# i3-Arch    \\ i3-Blackarch //
 #################################################
 wget http://pkg.sbr.io/archlinux/i686/cower-git-9.19.gf2d9c48-1-i686.pkg.tar.xz &&
 sleep 2 &&
@@ -27,6 +27,6 @@ sleep 2 &&
 wget https://raw.github.com/i3-Arch/i3config/master/zshrc &&
 mv zshrc ~/.zshrc &&
 chsh -s $(which zsh) &&
-echo " CLOSE OPEN TERMINALS, AND RE-OPEN TO SEE NEW SHELL / CONFIG ! "
+echo " CLOSE OPENED TERMINALS, AND RE-OPEN TO SEE NEW SHELL and SHELL CONFIG ! "
 sleep 3 &&
 exit
