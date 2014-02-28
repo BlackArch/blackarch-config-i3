@@ -1,12 +1,12 @@
 i3-blackarch
 ============
 
-This is a shared repo for developing the blackarch i3 desktop.
+This project aims to provide the user with an i3wm desktop on a clean netinstall of BlackArch linux net-install.  
 
 Installation
 ============
 
-1. Follow installation instructions on http://www.blackarch.org/download.html
+1. Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
 2. Reboot machine to ensure successful installation
 3. git clone https://github.com/t60r/i3-blackarch/tree/master/.scripts-for-setup
 4. Run setupX, background-ASAP and pacaur.sh
