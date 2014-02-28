@@ -1,5 +1,6 @@
 #!/bin/bash
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
+# i3-Arch     \\ i3-Blackarch //
 #####################################
 pacman -Syyu &&
 sleep 1 &&
