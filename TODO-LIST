@@ -1,11 +1,11 @@
-1. Change i3 config to match blackarch style.
+1. Change i3 config to match blackarch style. ~ Nearly Done
 
 2. Create python script to install just as blackarch-install does.
 	( Base Base-devel install with just i3 stuff maybe include slim for login manager)
 	
 3. Create a menu for all blackarch tools
 
-4. ???????
+4. 
 
 5. PROFIT
 
