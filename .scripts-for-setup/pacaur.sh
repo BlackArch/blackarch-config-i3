@@ -15,6 +15,6 @@ sleep 2 &&
 pacman -U *.tar.xz &&
 sleep 3 &&
 cd .. &&
-rm *.tar.gz &&
+rm pacaur.tar.gz &&
 rm -rf pacaur &&
 exit
