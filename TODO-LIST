@@ -1,18 +1,14 @@
 1. Change i3 config to match blackarch style. ~ Nearly Done
 
-2. Create python script to install just as blackarch-install does.
-	( Base Base-devel install with just i3 stuff maybe include slim for login manager)
+2. Create bash script to install i3 essentials after running blackarch-install.
 	
 3. Create a menu for all blackarch tools
 
-4. 
-
-5. PROFIT
 
 
 
 
-		- i3-Arch
+**Refined list a bit - ~t60r
 
 
 
