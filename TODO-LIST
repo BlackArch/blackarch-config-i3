@@ -2,7 +2,11 @@
 
 2. Create bash script to install i3 essentials after running blackarch-install.
 	
-3. Create a menu for all blackarch tools
+3. Create a menu for all blackarch tools.
+
+4. Re-erect BLACK-PACKAGE.
+
+5. Write in panel choices, dmenu/j4dmenu choices.
 
 
 
