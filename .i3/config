@@ -50,27 +50,24 @@ bindsym $mod+u border none
 for_window [window_role="pop-up"] floating enable,move absolute center
 
 # ASSIGN WORKSPACE VARIABLES
-set $WS1 1|term
-set $WS2 2|web
-set $WS3 3|weechat
-set $WS4 4|gns3
-set $WS5 5|media
-set $WS6 6|stuff
-set $WS7 7|other-stuff
+set $WS1   1|term
+set $WS2   2|web
+set $WS3   3|recon
+set $WS4   4|gns3
+set $WS5   5|media
+set $WS6   6|weechat
+set $WS7   7|stuff
+set $WS8   8|foo
+set $WS9   9|bar
+set $WS10 10|BlackArch
 
 # WINDOW CONTROL 
 ## Float everything
 #for_window [class="[.]*"] floating enable 
 ## BROWSER ASSIGNMENT (Navigator=Iceape)
-assign [instance="dwb|Navigator|midori|Uzbl-tabbed"] $WS2
 for_window [title="Download"] floating enable
 for_window [title="Browser"] floating enable
 for_window [title="Preferences"] floating enable
-for_window [class="Lxappearance"] floating enable
-for_window [title="Xfce-notifyd"] floating enable
-for_window [class="Leafpad"] floating enable 
-for_window [class="ZSNES"] floating enable
-assign [instance="mousepad|leafpad"] $WS3
 bindsym $MOD+Tab focus right
 
 # HANDLE POPUPS
@@ -122,15 +119,15 @@ bindsym $mod+4 workspace $WS4
 bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10:sample name
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
 bindsym $mod+Shift+percent move container to workspace $WS5
 bindsym $mod+Shift+asciicircum move container to workspace $WS6
 bindsym $mod+Shift+ampersand move container to workspace $WS7
-bindsym $mod+Shift+asterisk move container to workspace 8
-bindsym $mod+Shift+parenleft move container to workspace 9
-bindsym $mod+Shift+parenright move container to workspace 10
+bindsym $mod+Shift+asterisk move container to workspace $WS8
+bindsym $mod+Shift+parenleft move container to workspace $WS9
+bindsym $mod+Shift+parenright move container to workspace $WS10
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
@@ -175,6 +172,8 @@ bindsym Mod4+Control+q mode "Exit >> (L)ogout, (X)eboot, (P)oweroff  (C)Reload (
 # take screenshot
 # bindsym Print exec scrot '%Y-%m-%d-%t_$wx$h.png' -e 'mv $ $f ~/images/'
 bindsym Print exec scrot 'Screenshot - %Y-%m-%d--%_$wx$h_scrot.png' -e 'mv $f ~/images/'
+#-----------------------------------------------------------------------------depends^
+
 
 # colors
 
