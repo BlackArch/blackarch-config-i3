@@ -1,0 +1,86 @@
+!-----URxvt settings-----!
+URxvt*perl-ext-common: default,clipboard,url-select,keyboard-select,vtwheel,matcher,tabbedex
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+URxvt.tabbed.new-button: false
+URxvt.scrollBar: false
+URxvt.letterSpace: -1
+URxvt.font: xft:dejavu sans mono:book:size=10:hinting=medium
+!-----Xterm settings-----!
+xterm*faceName: Dejavu Sans Mono:style=Book:antialias=true:hinting=medium
+xterm*faceSize: 10
+!-----Universal Settings-----!
+Xft*dpi:                96
+*.foreground      : #d0d0d0
+*.background      : #000000
+*.cursorColor     : #ffffff
+!black
+*color0:#010008
+*color8:#1C1C1C
+!red
+*color1:#A71B1A
+*color9:#BF3130
+!green
+*color2:#3B8526
+*color10:#58A642
+!yellow
+*color3:#E49202
+*color11:#FFB026
+!blue
+*color4:#1D576D
+*color12:#31788E
+!magenta
+*color5:#97219C
+*color13:#A7248C
+!cyan
+*color6:#24866F
+*color14:#37A48D
+!white
+*color7:#B5AD64
+*color15:#CEC67D
+!-----xcalc settings-----!
+!
+xcalc*geometry:                        200x275
+xcalc.ti.bevel.background:             #111111
+xcalc.ti.bevel.screen.background:      #000000
+xcalc.ti.bevel.screen.DEG.background:  #000000
+xcalc.ti.bevel.screen.DEG.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.GRAD.background: #000000
+xcalc.ti.bevel.screen.GRAD.foreground: LightSeaGreen
+xcalc.ti.bevel.screen.RAD.background:  #000000
+xcalc.ti.bevel.screen.RAD.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.INV.background:  #000000
+xcalc.ti.bevel.screen.INV.foreground:  Red
+xcalc.ti.bevel.screen.LCD.background:  #000000
+xcalc.ti.bevel.screen.LCD.foreground:  LightSeaGreen
+xcalc.ti.bevel.screen.LCD.shadowWidth: 0
+xcalc.ti.bevel.screen.M.background:    #000000
+xcalc.ti.bevel.screen.M.foreground:    LightSeaGreen
+xcalc.ti.bevel.screen.P.background:    #000000
+xcalc.ti.bevel.screen.P.foreground:    Yellow
+xcalc.ti.Command.foreground:  White
+xcalc.ti.Command.background:  #777777
+xcalc.ti.button5.background:  Orange3
+xcalc.ti.button19.background: #611161
+xcalc.ti.button18.background: #611161
+xcalc.ti.button20.background: #611111
+!!uncomment to change label on division button
+!xcalc.ti.button20.label:      /
+xcalc.ti.button25.background: #722222
+xcalc.ti.button30.background: #833333
+xcalc.ti.button35.background: #944444
+xcalc.ti.button40.background: #a55555
+xcalc.ti.button22.background: #222262
+xcalc.ti.button23.background: #222262
+xcalc.ti.button24.background: #222272
+xcalc.ti.button27.background: #333373
+xcalc.ti.button28.background: #333373
+xcalc.ti.button29.background: #333373
+xcalc.ti.button32.background: #444484
+xcalc.ti.button33.background: #444484
+xcalc.ti.button34.background: #444484
+xcalc.ti.button37.background: #555595
+xcalc.ti.button38.background: #555595
+xcalc.ti.button39.background: #555595
+XCalc*Cursor:                 hand2
+XCalc*ShapeStyle:             rectangle
