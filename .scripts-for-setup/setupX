@@ -3,6 +3,7 @@
 # i3-Arch     \\ i3-Blackarch //
 #####################################
 echo " Lets do this shiiiiiiit " &&
+echo
 pacman -Syyu &&
 sleep 1 &&
 rm -rf /usr/share/fonts/* &&
@@ -13,6 +14,7 @@ mv xorg.conf.new xorg.conf &&
 cp /etc/skel/.xinitrc ~ &&  	## Still needs exec i3 + misc things \\ will add later
 sleep 1 &&
 echo "Setting Up i3 config in ~/.i3/config " &&
+echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.i3/config &&
 sleep 2 &&
 mkdir ~/.i3 &&
@@ -20,6 +22,7 @@ cp config ~/.i3/config &&
 rm config &&
 sleep 1 &&
 echo " Downloading and Setting up .Xresources & .vimrc " &&
+echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
 sleep 2 &&
 mv .Xresources ~ &&
