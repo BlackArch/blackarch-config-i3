@@ -2,6 +2,7 @@
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
 # i3-Arch     \\ i3-Blackarch //
 #####################################
+echo
 echo " Lets do this shiiiiiiit " &&
 echo
 pacman -Syyu &&
@@ -13,6 +14,7 @@ X -configure && sleep 4 &&
 mv xorg.conf.new xorg.conf &&
 cp /etc/skel/.xinitrc ~ &&  	## Still needs exec i3 + misc things \\ will add later
 sleep 1 &&
+echo
 echo "Setting Up i3 config in ~/.i3/config " &&
 echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.i3/config &&
@@ -21,6 +23,7 @@ mkdir ~/.i3 &&
 cp config ~/.i3/config &&
 rm config &&
 sleep 1 &&
+echo
 echo " Downloading and Setting up .Xresources & .vimrc " &&
 echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
