@@ -1,4 +1,6 @@
 #!/bin/bash
+echo
+echo " Downloading and Setting up Official Blackarch Wallpaper "
 wget https://raw.github.com/t60r/blackarch-site/master/images/blackarch-wallpaper-simple.png
 sleep 1 &&
 mkdir ~/.fehBACK &&
