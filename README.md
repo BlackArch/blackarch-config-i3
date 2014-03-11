@@ -9,7 +9,8 @@ Installation
 1. Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
 2. Reboot machine to ensure successful installation
 3. git clone https://github.com/t60r/i3-blackarch/tree/master/.scripts-for-setup
-4. Run setupX, background-ASAP and pacaur.sh
+4. Run 'source setupX' ,then add exec i3 to ~/.xinitrc, 
 5. startx
+   then 'source pacaur'
 
 	-={ You may need to edit .zshrc :: To help with local completion }=- 
