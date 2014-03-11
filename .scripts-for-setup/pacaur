@@ -30,7 +30,6 @@ sleep 2 &&
 	if [ $HOME/.zshrc ]
 		then
 			$(rm ~/.zshrc)
-			$(rm ~/.)
 if [ $HOME/.zlogin ] 
 	then
 		$(rm ~/.zlogin)

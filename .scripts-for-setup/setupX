@@ -19,18 +19,16 @@ sleep 1 &&
 echo
 echo "Setting Up i3 config in ~/.i3/config " &&
 echo
-wget https://raw.github.com/t60r/i3-blackarch/master/.i3/config &&
+wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config &&
 sleep 2 &&
-if [ $HOME/.i3/config == false ]
+if [ $HOME/.i3/config ]
 then
+	$(rm -rf ~/.i3)
 	$(mkdir ~/.i3)
-	$(cp config ~/.i3/config)
-		elif [ $HOME/.i3/config == true ]
-			then
-				echo
-				echo " This file exists already... Get help at #blackarch @ irc.freenode.net "
+	$(mv config ~/.i3/config)
 	else 
-		echo
+		$(mkdir ~/.i3)
+		$(mv config ~/.i3/config)
 		echo " Things seems fine"
 fi
 rm config &&

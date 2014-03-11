@@ -8,4 +8,7 @@ sleep 1 &&
 mv blackarch-wallpaper-simple.png ~/.fehBACK/ &&
 feh --bg-scale ~/.fehBACK/blackarch-wallpaper-simple.png &&
 echo "feh --bg-scale ~/.fehBACK/blackarch-wallpaper-simple.png" > ~/.fehbg &&
+echo
+echo " Never worry about a wallpaper :)    -- This is for i3-blackarch --look in-- '~/.i3/config' " 
+sleep 2 &&
 exit
