@@ -3,10 +3,18 @@
 # i3-Arch     \\ i3-Blackarch //
 #####################################
 DoPLZ=$(echo "exec i3" >> ~/.xinitrc)
-echo "____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ ____  "
-echo "||I |||3 |||       |||B |||L |||A |||C |||K |||A |||R |||C |||H || "
-echo "||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__|||__|| "
-echo "|/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\| "
+R=$(tput setaf 1)       ## RED
+W=$(tput setaf 7)       ## WHITE
+# G=$(tput setaf 2)  GREEN
+# Y=$(tput setaf 3)  YELLOW
+B=$(tput bold)          ## BOLD
+re=$(tput sgr0)     ## RESET COLORS
+echo -e " ${B} "
+echo -e "       ${W}    ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ ____  "
+echo -e "       ${W}    ||${R}I ${W}|||${R}3 ${W}|||       |||${R}B ${W}|||${R}L ${W}|||${R}A ${W}|||${R}C ${W}|||${R}K ${W}|||${R}A${W} |||${R}R ${W}|||${R}C ${W}|||${R}H ${W}|| "
+echo -e "       ${W}    ||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__|||__|| "
+echo -e "       ${W}    |/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\| "
+echo -e " ${re} "
 echo
 echo "                 Lets do this     " &&
 echo
@@ -29,7 +37,7 @@ fi
 cp /etc/skel/.xinitrc ~ &&  	## Still needs misc things \\ will add later
 if [ $HOME/.xinitrc ]
 	then
-		echo " $DoPLZ "
+		echo " ${DoPLZ} "
 	else
 		echo
 		echo " Where is .xinitrc ??? "
