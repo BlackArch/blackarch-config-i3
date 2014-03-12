@@ -2,18 +2,32 @@
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
 # i3-Arch     \\ i3-Blackarch //
 #####################################
-R=$(tput setaf 1)       ## RED
-W=$(tput setaf 7)       ## WHITE
-# G=$(tput setaf 2)  GREEN
-# Y=$(tput setaf 3)  YELLOW
-B=$(tput bold)          ## BOLD
-re=$(tput sgr0)     ## RESET COLORS
-echo -e " ${B} "
-echo -e "       ${W}    ____ ____ _________ ____ ____ ____ ____ ____ ____ ____ ____ ____  "
-echo -e "       ${W}    ||${R}I ${W}|||${R}3 ${W}|||       |||${R}B ${W}|||${R}L ${W}|||${R}A ${W}|||${R}C ${W}|||${R}K ${W}|||${R}A${W} |||${R}R ${W}|||${R}C ${W}|||${R}H ${W}|| "
-echo -e "       ${W}    ||__|||__|||_______|||__|||__|||__|||__|||__|||__|||__|||__|||__|| "
-echo -e "       ${W}    |/__\|/__\|/_______\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\|/__\| "
-echo -e " ${re} "
+asd() {
+cat <<"EOT"
+               ...
+             ;::::;
+           ;::::; :;	TIME TO LET THEM MEET THE REAPER 
+         ;:::::'   :;        
+        ;:::::;     ;.			-={ i3-Blackarch }=-
+       ,:::::'       ;           OOO\
+       ::::::;       ;          OOOOO\
+       ;:::::;       ;         OOOOOOOO
+      ,;::::::;     ;'         / OOOOOOO
+    ;:::::::::`. ,,,;.        /  / DOOOOOO
+  .';:::::::::::::::::;,     /  /     DOOOO
+ ,::::::;::::::;;;;::::;,   /  /        DOOO
+;`::::::`'::::::;;;::::: ,#/  /          DOOO
+:`:::::::`;::::::;;::: ;::#  /            DOOO
+::`:::::::`;:::::::: ;::::# /              DOO
+`:`:::::::`;:::::: ;::::::#/               DOO
+ :::`:::::::`;; ;:::::::::##                OO
+ ::::`:::::::`;::::::::;:::#                OO
+ `:::::`::::::::::::;'`:;::#                O
+  `:::::`::::::::;' /  / `:#
+   ::::::`:::::;'  /  /   `#
+EOT
+}
+asd
 echo
 echo "                 Lets do this     " &&
 echo
@@ -70,8 +84,7 @@ sleep 2 &&
 			echo " Good .. We're moving forward "
 if [ .Xresources ] 		###  t60r  :: this failed :: xrdb merge ./$HOME/.Xresources
 	then
-		echo " $(mv .Xresources ~) "
-		echo " $(rm .Xresources) " 
+		echo " $(mv .Xresources ~) " 
 	else
 		echo " Where is .Xresources "
 fi
@@ -96,20 +109,20 @@ read OPTION1
 				echo " Did you choose 'y'  or 'n' ? "
 	fi
 echo
-echo " Would you like a zsh setup customized for i3-blackarch  Type 1 "
+echo " Would you like a zsh setup customized for i3-blackarch  Type y "
 echo 
-echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  0 "
+echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  n "
 echo
 read YNUMBER
-if [ $YNUMBER == 1 ]
+if [ $YNUMBER == y -o $YNUMBER == Y ]
 	then 
 		echo "$(source pacaur) PRESS ENTER "
-	elif [ $YNUMBER == 0 ]
+	elif [ $YNUMBER == n -o $YNUMBER == N ]
 			then
 				echo
 				echo " Understood "
 	else
-		echo " ERROR OCCURED --  ENTER  1  or 0 "
+		echo " ERROR OCCURED --  ENTER  y  or n "
 fi
 echo
 # echo " Would you like me to setup your background :)     'y' or 'n' "
