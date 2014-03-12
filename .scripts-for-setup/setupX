@@ -12,8 +12,7 @@ rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Don
 sleep 1 &&
 pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode &&
 sleep 2 &&
-X -configure && sleep 4 &&
-$(mv xorg.conf.new xorg.conf) &&
+X -configure && sleep 1 &&
 sleep 1 &&
 if [ $HOME/xorg.conf.new ]
 	then
