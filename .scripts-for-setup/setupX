@@ -114,17 +114,17 @@ echo
 echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  n "
 echo
 read YNUMBER
-if [ $YNUMBER == y -o $YNUMBER == Y ]
-	then 
-		echo "$(source pacaur) PRESS ENTER "
-	elif [ $YNUMBER == n -o $YNUMBER == N ]
-			then
-				echo
-				echo " Understood "
-	else
-		echo " ERROR OCCURED --  ENTER  y  or n "
-fi
-echo
+# if [ $YNUMBER == y -o $YNUMBER == Y ]
+#	then 
+#		echo "$(source pacaur) PRESS ENTER "
+#	elif [ $YNUMBER == n -o $YNUMBER == N ]
+#			then
+#				echo
+#				echo " Understood "
+#	else
+#		echo " ERROR OCCURED --  ENTER  y  or n "
+# fi
+# echo
 # echo " Would you like me to setup your background :)     'y' or 'n' "
 # read HU2
 # if [ $HU2 == y -o $HU2 == Y ]
