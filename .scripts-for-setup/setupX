@@ -50,12 +50,12 @@ wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config &&
 sleep 2 &&
 if [ $HOME/.i3/config ]
 then
-	$(rm -rf ~/.i3)
-	$(mkdir ~/.i3)
-	$(mv config ~/.i3/config)
+	echo " $(rm -rf ~/.i3) "
+	echo " $(mkdir ~/.i3) "
+	echo " $(mv config ~/.i3/config) "
 	else 
-		$(mkdir ~/.i3)
-		$(mv config ~/.i3/config)
+		echo " $(mkdir ~/.i3) "
+		echo " $(mv config ~/.i3/config) "
 		echo " Things seems fine"
 fi
 sleep 1 &&
@@ -64,7 +64,19 @@ echo " Downloading and Setting up .Xresources & .vimrc " &&
 echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
 sleep 2 &&
-xrdb merge ./$HOME/.Xresources
+	if [ $HOME/.Xresources ]
+		then
+			echo " $(rm $HOME/.Xresources)"
+		else
+			echo " Good .. We're moving forward "
+if [ .Xresources ] 		###  t60r  :: this failed :: xrdb merge ./$HOME/.Xresources
+	then
+		echo " $(mv .Xresources ~) "
+		echo " $(rm .Xresources) " 
+	else
+		echo " Where is .Xresources "
+fi
+	fi
 sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
@@ -93,6 +105,8 @@ read yourNUMBER
 if [ $yourNUMBER == 1 ]
 	then 
 		echo " $(source pacaur) "
+		sleep 3
+		echo " Press Enter "
 		elif [ $yourNUMBER == 0 ]
 			then
 				echo
