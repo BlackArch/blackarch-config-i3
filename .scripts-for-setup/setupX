@@ -16,8 +16,8 @@ X -configure && sleep 1 &&
 sleep 1 &&
 if [ $HOME/xorg.conf.new ]
 	then
-		$(cp xorg.conf.new xorg.conf)
-		$(rm xorg.conf.new)
+		$(cp ~/xorg.conf.new ~/xorg.conf)
+		$(rm ~/xorg.conf.new)
 	else
 		echo
 		echo " where is xorg.conf.new ? -- skipping"
