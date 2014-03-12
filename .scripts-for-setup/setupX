@@ -45,7 +45,6 @@ then
 		$(mv config ~/.i3/config)
 		echo " Things seems fine"
 fi
-rm config &&
 sleep 1 &&
 echo
 echo " Downloading and Setting up .Xresources & .vimrc " &&
