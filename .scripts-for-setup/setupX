@@ -101,13 +101,12 @@ echo " Would you like a zsh setup customized for i3-blackarch  Type 1 "
 echo 
 echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  0 "
 echo
-read yourNUMBER
-if [ $yourNUMBER == 1 ]
+read YNUMBER
+if [ $YNUMBER == 1 ]
 	then 
-		echo " $(source pacaur) "
-		sleep 3
+		echo "$(source pacaur)"
 		echo " Press Enter "
-		elif [ $yourNUMBER == 0 ]
+	elif [ $YNUMBER == 0 ]
 			then
 				echo
 				echo " Understood "
@@ -115,14 +114,14 @@ if [ $yourNUMBER == 1 ]
 		echo " ERROR OCCURED --  ENTER  1  or 0 "
 fi
 echo
-echo " Would you like me to setup your background :)     'y' or 'n' "
-read HU2
-if [ $HU2 == y -o $HU2 == Y ]
-	then
-		echo " $(startx) "
-		sleep 4
-		echo " $(xterm -e source background-ASAP) "
-	else
-		echo
-		echo " You chose NO -- OR entered an invalid character "
-fi
+# echo " Would you like me to setup your background :)     'y' or 'n' "
+# read HU2
+# if [ $HU2 == y -o $HU2 == Y ]
+#	then
+#		echo " $(startx) "
+#		sleep 4
+#		echo " $(xterm -e source background-ASAP) "
+#	else
+#		echo
+#		echo " You chose NO -- OR entered an invalid character "
+# fi
