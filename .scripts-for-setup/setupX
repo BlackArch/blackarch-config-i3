@@ -52,7 +52,7 @@ echo " Downloading and Setting up .Xresources & .vimrc " &&
 echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
 sleep 2 &&
-mv .Xresources ~ &&
+xrdb merge ./$HOME/.Xresources
 sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
