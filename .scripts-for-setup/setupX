@@ -29,6 +29,7 @@ if [ $HOME/.xinitrc ]
 	else
 		echo
 		echo " Where is .xinitrc ??? "
+fi
 sleep 1 &&
 echo
 echo "Setting Up i3 config in ~/.i3/config " &&
