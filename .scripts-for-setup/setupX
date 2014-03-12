@@ -12,8 +12,13 @@ sleep 1 &&
 pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode &&
 sleep 2 &&
 X -configure && sleep 4 &&
-mv xorg.conf.new xorg.conf &&
-rm xorg.conf.new &&
+$(mv xorg.conf.new xorg.conf) &&
+sleep 1 &&
+if [ $HOME/xorg.conf.new ]
+	then
+		$(cp xorg.conf.new xorg.conf)
+		$(rm xorg.conf.new) &&
+fi
 cp /etc/skel/.xinitrc ~ &&  	## Still needs exec i3 + misc things \\ will add later
 sleep 1 &&
 echo
