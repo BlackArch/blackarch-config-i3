@@ -58,29 +58,3 @@ read OPTION1
 				echo " An Error Occured "
 				echo " Did you choose 'y'  or 'n' ? "
 	fi
-echo
-echo " Would you like a zsh setup customized for i3-blackarch  Type 1 "
-echo 
-echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  0 "
-echo
-read yourNUMBER
-if [ $yourNUMBER == 1 ]
-	then 
-		$(source pacaur)
-	elif [ $yourNUMBER == 0 ]
-		then
-			echo
-			echo " Understood "
-	else
-		echo " ERROR OCCURED --  ENTER  1  or 0 "
-fi
-echo
-echo " Would you like me to setup your background :)     'y' or 'n' "
-read HU2
-if [ $HU2 == y -o $HU2 == Y ]
-	then
-		$(source background-ASAP)
-	else
-		echo
-		echo " You chose NO -- OR entered an invalid character "
-fi
