@@ -103,8 +103,7 @@ echo
 read YNUMBER
 if [ $YNUMBER == 1 ]
 	then 
-		echo "$(source pacaur)"
-		echo " Press Enter "
+		echo "$(source pacaur) PRESS ENTER "
 	elif [ $YNUMBER == 0 ]
 			then
 				echo
