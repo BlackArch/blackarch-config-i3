@@ -2,7 +2,6 @@
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
 # i3-Arch     \\ i3-Blackarch //
 #####################################
-DoPLZ=$(echo "exec i3" >> ~/.xinitrc)
 R=$(tput setaf 1)       ## RED
 W=$(tput setaf 7)       ## WHITE
 # G=$(tput setaf 2)  GREEN
@@ -37,7 +36,7 @@ fi
 cp /etc/skel/.xinitrc ~ &&  	## Still needs misc things \\ will add later
 if [ $HOME/.xinitrc ]
 	then
-		echo " ${DoPLZ} "
+		echo "exec i3" >> $HOME/.xinitrc
 	else
 		echo
 		echo " Where is .xinitrc ??? "
