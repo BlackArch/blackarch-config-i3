@@ -67,8 +67,8 @@ sleep 1 &&
 echo
 echo " Setting up .Xresources, .vimrc and .xinitrc" &&
 echo
-cp ~/i3-blackarch/.Xresources &&
-cp ~/i3-blackarch/.xinitrc &&
+cp ~/i3-blackarch/.Xresources ~/ &&
+cp ~/i3-blackarch/.xinitrc ~/ &&
 sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
