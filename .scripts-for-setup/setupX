@@ -1,15 +1,14 @@
 #!/bin/bash
-#	THIS IS JUST THE BEGINNING \\ DONT TRIP
-# i3-Arch     \\ i3-Blackarch //
+# i3-Arch     \\ i3-BlackArch //
 #####################################
 asd() {														
 cat <<"EOT"															
 
                ...
              ;::::;
-           ;::::; :;	TIME TO LET THEM MEET THE REAPER 
+           ;::::; :;	DON'T FEAR THE REAPER... 
          ;:::::'   :;        
-        ;:::::;     ;.			-={ i3-Blackarch }=-
+        ;:::::;     ;.			-={ i3-BlackArch }=-
        ,:::::'       ;           OOO\
        ::::::;       ;          OOOOO\
        ;:::::;       ;         OOOOOOOO
@@ -48,14 +47,6 @@ if [ "$HOME/xorg.conf.new" ]
 		echo
 		echo " where is xorg.conf.new ? -- skipping"
 fi
-cp /etc/skel/.xinitrc ~ &&  	## Still needs misc things \\ will add later
-if [ "$HOME/.xinitrc" ]
-	then
-		echo "exec i3" >> "$HOME/.xinitrc"
-	else
-		echo
-		echo " Where is .xinitrc ??? "
-fi
 sleep 1 &&
 echo
 echo "Setting Up i3 config in ~/.i3/config " &&
@@ -74,22 +65,10 @@ then
 fi
 sleep 1 &&
 echo
-echo " Downloading and Setting up .Xresources & .vimrc " &&
+echo " Setting up .Xresources, .vimrc and .xinitrc" &&
 echo
-wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
-sleep 2 &&
-	if [ "$HOME/.Xresources" ]
-		then
-			echo " $(rm $HOME/.Xresources 2> /dev/null)"
-		else
-			echo " Good .. We're moving forward "
-if [ .Xresources ] 		###  t60r  :: this failed :: xrdb merge ./$HOME/.Xresources
-	then
-		echo " $(mv .Xresources ~) " 
-	else
-		echo " Where is .Xresources "
-fi
-	fi
+cp ~/i3-blackarch/.Xresources ~/ &&
+cp ~/i3-blackarch/.xinitrc ~/ &&
 sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
@@ -118,7 +97,7 @@ cat <<"EOT"
               888888888888888888 
               88' _`88'_  `88888 
               88 88 88 88  88888 
-              88_88_::_88_:88888 
+              88_88_::_88_:88888 ~ Sup?
               88:::,::,:::::8888 
               88`:::::::::'`8888 
              .88  `::::'    8:88. 
