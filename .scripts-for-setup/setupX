@@ -2,13 +2,6 @@
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
 # i3-Arch     \\ i3-Blackarch //
 #####################################
-if [ "${HOME?}/i3-blackarch/.scripts-for-setup"]
-	then
-		cd "${HOME?}/i3-blackarch/.scripts-for-setup"
-	else
-		echo
-		echo " Where is scripts-for-setup  ?? "       ###   Plan on using something like this if statement 
-fi																###  throughtout the script more to make it simpler
 asd() {														
 cat <<"EOT"															
 
@@ -87,7 +80,7 @@ wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
 sleep 2 &&
 	if [ "$HOME/.Xresources" ]
 		then
-			echo " $(rm $HOME/.Xresources)"
+			echo " $(rm $HOME/.Xresources 2> /dev/null)"
 		else
 			echo " Good .. We're moving forward "
 if [ .Xresources ] 		###  t60r  :: this failed :: xrdb merge ./$HOME/.Xresources
@@ -149,7 +142,7 @@ EOT
 }
 asd
 sleep 3 &&
-figlet "JOIN   #blackarch ----- ON ----- irc.freenode.net"
+echo " NOW TYPE     'startx'  AND Press Enter"
 # echo
 # echo " Would you like a zsh setup customized for i3-blackarch  Type y "
 # echo 
