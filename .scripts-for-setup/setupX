@@ -76,20 +76,7 @@ sleep 1 &&
 echo
 echo " Downloading and Setting up .Xresources & .vimrc " &&
 echo
-wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
-sleep 2 &&
-	if [ "$HOME/.Xresources" ]
-		then
-			echo " $(rm $HOME/.Xresources 2> /dev/null)"
-		else
-			echo " Good .. We're moving forward "
-if [ .Xresources ] 		###  t60r  :: this failed :: xrdb merge ./$HOME/.Xresources
-	then
-		echo " $(mv .Xresources ~) " 
-	else
-		echo " Where is .Xresources "
-fi
-	fi
+cp ~/i3-blackarch/.Xresources ~/ &&
 sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
