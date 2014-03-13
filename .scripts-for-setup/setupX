@@ -108,12 +108,12 @@ read OPTION1
 				echo " An Error Occured "
 				echo " Did you choose 'y'  or 'n' ? "
 	fi
-echo
-echo " Would you like a zsh setup customized for i3-blackarch  Type y "
-echo 
-echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  n "
-echo
-read YNUMBER
+# echo
+# echo " Would you like a zsh setup customized for i3-blackarch  Type y "
+# echo 
+# echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  n "
+# echo
+# read YNUMBER
 # if [ $YNUMBER == y -o $YNUMBER == Y ]
 #	then 
 #		echo "$(source pacaur) PRESS ENTER "
