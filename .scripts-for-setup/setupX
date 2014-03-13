@@ -2,8 +2,15 @@
 #	THIS IS JUST THE BEGINNING \\ DONT TRIP
 # i3-Arch     \\ i3-Blackarch //
 #####################################
-asd() {
-cat <<"EOT"
+if [ "${HOME?}/i3-blackarch/.scripts-for-setup"]
+	then
+		cd "${HOME?}/i3-blackarch/.scripts-for-setup"
+	else
+		echo
+		echo " Where is scripts-for-setup  ?? "       ###   Plan on using something like this if statement 
+fi																###  throughtout the script more to make it simpler
+asd() {														
+cat <<"EOT"															
 
                ...
              ;::::;
@@ -40,7 +47,7 @@ pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit
 sleep 2 &&
 X -configure && sleep 1 &&
 sleep 1 &&
-if [ $HOME/xorg.conf.new ]
+if [ "$HOME/xorg.conf.new" ]
 	then
 		$(cp $HOME/xorg.conf.new $HOME/xorg.conf)
 		$(rm $HOME/xorg.conf.new)
@@ -49,9 +56,9 @@ if [ $HOME/xorg.conf.new ]
 		echo " where is xorg.conf.new ? -- skipping"
 fi
 cp /etc/skel/.xinitrc ~ &&  	## Still needs misc things \\ will add later
-if [ $HOME/.xinitrc ]
+if [ "$HOME/.xinitrc" ]
 	then
-		echo "exec i3" >> $HOME/.xinitrc
+		echo "exec i3" >> "$HOME/.xinitrc"
 	else
 		echo
 		echo " Where is .xinitrc ??? "
@@ -62,7 +69,7 @@ echo "Setting Up i3 config in ~/.i3/config " &&
 echo
 wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config &&
 sleep 2 &&
-if [ $HOME/.i3/config ]
+if [ "$HOME/.i3/config" ]
 then
 	echo " $(rm -rf ~/.i3) "
 	echo " $(mkdir ~/.i3) "
@@ -78,7 +85,7 @@ echo " Downloading and Setting up .Xresources & .vimrc " &&
 echo
 wget https://raw.github.com/t60r/i3-blackarch/master/.Xresources &&
 sleep 2 &&
-	if [ $HOME/.Xresources ]
+	if [ "$HOME/.Xresources" ]
 		then
 			echo " $(rm $HOME/.Xresources)"
 		else
@@ -94,11 +101,11 @@ sleep 1 &&
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
 read OPTION1
-	if [ $OPTION1 == y -o $OPTION1 == Y ]
+	if [ "$OPTION1" == y -o "$OPTION1" == Y ]
 		then
 			echo
 			echo " Thats a big 10-4 "
-				elif [ $OPTION1 == n -o $OPTION1 == N ]
+				elif [ "$OPTION1" == n -o "$OPTION1" == N ]
 					then
 						$(rm -rf ~/.vim && rm ~/.viminfo)
 						$(wget https://raw.github.com/t60r/i3-blackarch/master/.vimrc)
