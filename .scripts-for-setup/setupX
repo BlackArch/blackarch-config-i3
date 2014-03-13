@@ -141,8 +141,10 @@ cat <<"EOT"
 EOT
 }
 asd
+echo
+echo " NOW STARTING X       'startx' "
 sleep 3 &&
-echo " NOW TYPE     'startx'  AND Press Enter"
+$(startx)
 # echo
 # echo " Would you like a zsh setup customized for i3-blackarch  Type y "
 # echo 
