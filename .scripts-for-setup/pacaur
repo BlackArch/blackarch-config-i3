@@ -60,4 +60,5 @@ echo " Report Errors / Tips to i3-Arch @ irc.freenode.net #blackarch "
 echo
 sleep 3 &&
 echo " NOW SETTING UP BACKGROUND  AND REBOOTING INTO NEW SETUP"
-echo " $(source background-ASAP)"
+echo
+source background-ASAP
