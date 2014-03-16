@@ -8,13 +8,12 @@ Installation
 
 1. Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
 2. Reboot machine to ensure successful installation
-3. git clone https://github.com/BlackArch/i3-blackarch.git
-4. cd into i3-blackarch/.scripts-for-setup
-5. Run 'source setupX'
+3. wget https://github.com/BlackArch/i3-blackarch/blob/master/.scripts-for-setup/i3-setup
+4. Run 'source i3-setup'
 	
-	6. +OPTIONAL+    Once X has started ; open a terminal and run 'source pacaur'
+	5. +OPTIONAL+    Once X has started ; open a terminal and run 'source pacaur'
 		
-			Option 6 will setup custom zsh config and set up your background (for good)
+			Option 5 will setup custom zsh config and set up your background (for good)
 
 							If you wouldnt like the zsh config 
 
