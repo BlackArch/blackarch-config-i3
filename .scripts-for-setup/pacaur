@@ -50,7 +50,7 @@ echo
 read QUESTION
 	if [ $QUESTION == Y -o $QUESTION == y ]
 		then
-			$(sudo pacman -Rs pacaur --noconfirm)
+			$(pacman -Rs pacaur --noconfirm)
 		else
 			echo
 			echo " You Chose NO - OR An Invalid Character Was Entered "
