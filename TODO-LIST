@@ -1,8 +1,8 @@
 1. Change i3 config to match blackarch style. ~ Nearly Done
 
-2. Create bash script to install i3 essentials after running blackarch-install. ~ In Progress
+2. Create bash script to install i3 essentials after running blackarch-install. ~ Nearly Done
 	
-3. Create a menu for all blackarch tools.
+3. Create a menu for all blackarch tools. ~ In Progress
 
 4. Re-erect BLACK-PACKAGE.
 
@@ -10,13 +10,13 @@
 
 6. Flesh-out urxvt
 
-7. Test setupX & fix bugs related to switching from old blackarch image
+7. Test setupX & fix bugs related to switching from old blackarch image  ~ DONE
 
-8. Call all scripts from one  \\ two at most 
+8. Call all scripts from one  \\ two at most   ~ Done
 
 9. Add moar options
 
-10. Optional Customization
+10. Optional Customization Choices
 
 
 
