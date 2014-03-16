@@ -11,4 +11,6 @@ echo "feh --bg-scale ~/.fehBACK/blackarch-wallpaper-simple.png" > ~/.fehbg &&
 echo
 echo " Never worry about a wallpaper :)    -- This is for i3-blackarch --look in-- '~/.i3/config' " 
 sleep 2 &&
+echo " $(rm -rf $HOME/i3-blackarch) "
+sleep 1 &&
 echo " $(reboot) "
