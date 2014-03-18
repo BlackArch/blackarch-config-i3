@@ -186,6 +186,7 @@ client.urgent			#383a3b #383a3b  #ee0000
 
 ###  ADDED KEY BINDINGS  ###
 bindsym $MOD+SHIFT+Return exec xterm
+bindsym $MOD+Return exec urxvt 
 bindsym $MOD+SHIFT+b exec --no-startup-id firefox
 
 # VOLUME ADJUSTMENT

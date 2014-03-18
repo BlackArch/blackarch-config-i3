@@ -1,5 +1,5 @@
 !-----URxvt settings-----!
-URxvt*perl-ext-common: default,clipboard,url-select,keyboard-select,vtwheel,matcher,tabbedex
+URxvt*perl-ext-common: default,clipboard,vtwheel,matcher,tabbedex
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.tabbed.new-button: false
