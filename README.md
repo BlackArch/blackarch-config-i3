@@ -8,7 +8,7 @@ Installation
 
 1. Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
 2. Reboot machine to ensure successful installation
-3. wget https://github.com/BlackArch/i3-blackarch/blob/master/.scripts-for-setup/i3-setup
+3. wget https://raw.github.com/BlackArch/i3-blackarch/master/.scripts-for-setup/i3-setup
 4. Run 'source i3-setup'
 	
 	5. +OPTIONAL+    Once X has started ; open a terminal and run 'source pacaur'
