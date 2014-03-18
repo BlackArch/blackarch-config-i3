@@ -6,6 +6,10 @@ URxvt.tabbed.new-button: false
 URxvt.scrollBar: false
 URxvt.letterSpace: -1
 URxvt.font: xft:dejavu sans mono:book:size=10:hinting=medium
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
 !-----Xterm settings-----!
 xterm*faceName: Dejavu Sans Mono:style=Book:antialias=true:hinting=medium
 xterm*faceSize: 10
