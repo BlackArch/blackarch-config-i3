@@ -13,4 +13,5 @@ if [ $HOME/i3-blackarch/.scripts-for-setup ]
 		echo " Where is scripts-for-setup  ?? "
 fi
 echo
+echo " Thanks for using i3-Setup, Type  startx   to start i3  " >> /etc/motd
 source setupX
