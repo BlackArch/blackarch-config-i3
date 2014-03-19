@@ -19,4 +19,5 @@ Installation
 
 	  ::: Run 'source background-ASAP' to let the i3 config recognize the wallpaper ! :::
 
-			-={ You may need to edit .zshrc :: To help with local completion }=- 
+			-={ You may want to edit .zshrc :: To help with local completion }=- 
+						-={  TIP : SEARCH FOR 'cocky'  in .zshrc }=-
