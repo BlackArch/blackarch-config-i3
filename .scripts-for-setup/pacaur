@@ -36,6 +36,9 @@ fi
 	fi
 sleep 1 &&
 pacaur -S oh-my-zsh-git --asroot --noconfirm &&
+pacaur -S urxvt-tabbedex --asroot --noconfirm &&
+pacaur -S urxvt-vtwheel --asroot --noconfirm &&
+pacaur -S urxvt-font-size-git --asroot --noconfirm &&
 sleep 2 &&
 wget https://raw.github.com/i3-Arch/i3config/master/zshrc &&
 sleep 1 &&
