@@ -4,7 +4,6 @@ red=$(tput setaf 1)
 white=$(tput setaf 7)
 green=$(tput setaf 2)
 yellow=$(tput setaf 3)
-purple=$(tput setaf 4)
 CHOICE=4
 	until [ $CHOICE -eq 5 ]
 	do
@@ -20,12 +19,12 @@ clear
 	echo
 read CHOICE
 	case $CHOICE in
-		1) echo pacman -Sg |grep blackarch ;;
-		2) pacman -S blackarch --noconfirm ;;
-		3) pacman -S blackarch-wireless blackarch-cracker blackarch-exploitation --noconfirm ;;
-		4) echo -e "\033[1m ${white} https://github.com/Blackarch/i3-blackarch" ;;
+		1) echo -e "\033[1m ${yellow} $(pacman -Sg |grep blackarch) " ;;
+		2) echo -e "\033[1m ${yellow} $(pacman -S blackarch python2-pmw --noconfirm) " ;;
+		3) echo -e "\033[1m ${yellow} $(pacman -S blackarch-wireless blackarch-cracker blackarch-exploitation --noconfirm) " ;;
+		4) echo -e "\033[1m ${white} https://github.com/t60r/i3-blackarch" ;;
 		5) echo -e "\033[1m ${yellow} Thanks for Using i3-Blackarch " ;;
-		*) echo -e "\033[1m ${red} invalid ${purple} option \033[0m"
+		*) echo -e "\033[1m ${red} invalid option\033[0m"
 	esac
 echo
 	echo -e "\033[1m ${green} Press Enter to Continue\033[0m"
