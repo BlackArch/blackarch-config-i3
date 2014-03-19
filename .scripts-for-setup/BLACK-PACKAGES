@@ -20,9 +20,9 @@ clear
 	echo
 read CHOICE
 	case $CHOICE in
-		1) echo -e "\033[1m ${yellow} $(pacman -Sg |grep blackarch) TO INSTALL A SPECIFIC PACKAGE PRESS CTRL+C and type 'pacman -S pkgname' " ;;
-		2) echo -e "\033[1m ${yellow} $(pacman -S blackarch --noconfirm) " ;;
-		3) echo -e "\033[1m ${yellow} $(pacman -S blackarch-wireless blackarch-cracker blackarch-exploitation --noconfirm) " ;;
+		1) echo pacman -Sg |grep blackarch ;;
+		2) pacman -S blackarch --noconfirm ;;
+		3) pacman -S blackarch-wireless blackarch-cracker blackarch-exploitation --noconfirm ;;
 		4) echo -e "\033[1m ${white} https://github.com/Blackarch/i3-blackarch" ;;
 		5) echo -e "\033[1m ${yellow} Thanks for Using i3-Blackarch " ;;
 		*) echo -e "\033[1m ${red} invalid ${purple} option \033[0m"
