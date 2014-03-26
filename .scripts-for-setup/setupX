@@ -1,6 +1,7 @@
-#!/bin/bash
-# i3-Arch     \\ i3-BlackArch //
-#####################################
+#!/bin/bash 
+# i3-Arch        |      Setup X     |   
+# t60r	        /|\  i3-BlackArch  /|\
+###############################################
 asd() {														
 cat <<"EOT"															
 
@@ -114,33 +115,6 @@ EOT
 asd
 echo
 echo " NOW STARTING X       'startx' "
+echo " TIP :: In the future you will need to Run ' startx :: "
 sleep 3 &&
 $(startx)
-# echo
-# echo " Would you like a zsh setup customized for i3-blackarch  Type y "
-# echo 
-# echo " To Skip this and Use DEFAULT zsh config for blackarch   Type  n "
-# echo
-# read YNUMBER
-# if [ $YNUMBER == y -o $YNUMBER == Y ]
-#	then 
-#		echo "$(source pacaur) PRESS ENTER "
-#	elif [ $YNUMBER == n -o $YNUMBER == N ]
-#			then
-#				echo
-#				echo " Understood "
-#	else
-#		echo " ERROR OCCURED --  ENTER  y  or n "
-# fi
-# echo
-# echo " Would you like me to setup your background :)     'y' or 'n' "
-# read HU2
-# if [ $HU2 == y -o $HU2 == Y ]
-#	then
-#		echo " $(startx) "
-#		sleep 4
-#		echo " $(xterm -e source background-ASAP) "
-#	else
-#		echo
-#		echo " You chose NO -- OR entered an invalid character "
-# fi
