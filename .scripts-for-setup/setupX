@@ -29,16 +29,12 @@ EOT
 }
 asd
 echo
-echo "              :: Lets Do This ::     " &&
+echo "              :: Lets Do This ::     "
 echo
-pacman -Syyu &&
-sleep 1 &&
+pacman -Syyu
 rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
-sleep 1 &&
-pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls &&
-sleep 2 &&
-X -configure && sleep 1 &&
-sleep 1 &&
+pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls
+X -configure
 if [ "$HOME/xorg.conf.new" ]
 	then
 		$(cp $HOME/xorg.conf.new $HOME/xorg.conf)
@@ -47,12 +43,10 @@ if [ "$HOME/xorg.conf.new" ]
 		echo
 		echo " where is xorg.conf.new ? -- skipping"
 fi
-sleep 1 &&
 echo
-echo "Setting Up i3 config in ~/.i3/config " &&
+echo "Setting Up i3 config in ~/.i3/config "
 echo
-wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config &&
-sleep 2 &&
+wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config
 if [ "$HOME/.i3/config" ]
 then
 	echo " $(rm -rf ~/.i3) "
@@ -63,13 +57,11 @@ then
 		echo " $(mv config ~/.i3/config) "
 		echo " Things seems fine"
 fi
-sleep 1 &&
 echo
-echo " Setting up .Xresources, .vimrc and .xinitrc" &&
+echo " Setting up .Xresources, .vimrc and .xinitrc"
 echo
-cp ~/i3-blackarch/.Xresources ~/ &&
-cp ~/i3-blackarch/.xinitrc ~/ &&
-sleep 1 &&
+cp ~/i3-blackarch/.Xresources ~ 
+cp ~/i3-blackarch/.xinitrc ~
 echo
 echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
 read OPTION1
