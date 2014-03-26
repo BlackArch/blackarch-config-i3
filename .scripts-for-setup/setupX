@@ -2,6 +2,18 @@
 # i3-Arch        |      Setup X     |   
 # t60r	        /|\  i3-BlackArch  /|\
 ###############################################
+$(cd $HOME)
+$(git clone https://github.com/Blackarch/i3-blackarch.git)
+if [ $HOME/i3-blackarch/.scripts-for-setup ]
+	then
+		cd "${HOME?}/i3-blackarch/.scripts-for-setup"
+	else
+		echo
+		echo " Where is scripts-for-setup  ? "
+fi
+echo "                "  >> /etc/motd
+echo " Thanks for using i3-Setup " >> /etc/motd
+echo " ::  Type  startx   to start i3  :: "  >> /etc/motd 
 asd() {														
 cat <<"EOT"															
 
@@ -49,10 +61,10 @@ echo "Setting Up i3 config in ~/.i3/config "
 echo
 wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config
 if [ "$HOME/.i3/config" ]
-then
-	echo " $(rm -rf ~/.i3) "
-	echo " $(mkdir ~/.i3) "
-	echo " $(mv config ~/.i3/config) "
+		then
+			echo " $(rm -rf ~/.i3) "
+			echo " $(mkdir ~/.i3) "
+			echo " $(mv config ~/.i3/config) "
 	else 
 		echo " $(mkdir ~/.i3) "
 		echo " $(mv config ~/.i3/config) "
