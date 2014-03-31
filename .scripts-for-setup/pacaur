@@ -1,16 +1,14 @@
 #!/bin/bash
+# Im new to bash... and still young and learning... so dont hit me .... kthnx
 # This builds pacaur, and sets up oh-my-zsh
-# i3-Arch
-# t60r					 |	   i3-Setup    |
-# trewchainz			/|\  i3-Blackarch /|\
+# i3-Arch    \\ i3-Blackarch //
 #################################################
 if [ "$(uname -m)" = x86_64 ]
 then
 	echo -e " Using old version of cower to do this.."
 	echo -e " I reccomend letting the script remove pacaur + cower later on..."
 	echo -e " BE PATIENT "
-	echo -e " $(wget 
-http://pkg.sbr.io/archlinux/x86_64/cower-git-9.19.gf2d9c48-1-x86_64.pkg.tar.xz) "
+	echo -e " $(wget http://pkg.sbr.io/archlinux/x86_64/cower-git-9.19.gf2d9c48-1-x86_64.pkg.tar.xz) "
 	pacman -U *.tar.xz --noconfirm
 	rm *.tar.xz
 	wget https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz
@@ -55,8 +53,7 @@ then
 	echo -e " Using old version of cower to do this.."
 	echo -e " I reccomend letting the script remove pacaur + cower later on..."
 	echo -e " BE PATIENT "
-	echo -e " $(wget 
-http://pkg.sbr.io/archlinux/i686/cower-git-9.19.gf2d9c48-1-i686.pkg.tar.xz) "
+	echo -e " $(wget http://pkg.sbr.io/archlinux/i686/cower-git-9.19.gf2d9c48-1-i686.pkg.tar.xz) "
 
 	pacman -U *.tar.xz --noconfirm
 	rm *.tar.xz
