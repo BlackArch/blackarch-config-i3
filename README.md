@@ -17,7 +17,7 @@ Installation
 
 							If you wouldnt like the zsh config 
 
-	  ::: Run 'source background-ASAP' to let the i3 config recognize the wallpaper ! :::
+	  ::: If you dont run pacaur ; Run 'source background-ASAP' to let the i3 config recognize the wallpaper ! :::
 
 			-={ You may want to edit .zshrc :: To help with local completion }=- 
 						-={  TIP : SEARCH FOR 'cocky'  in .zshrc }=-
