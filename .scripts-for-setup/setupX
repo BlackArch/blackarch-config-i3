@@ -1,101 +1,132 @@
-#!/bin/bash
-# Im new to bash... and still young and learning... so dont hit me .... kthnx
-# This builds pacaur, and sets up oh-my-zsh
-# i3-Arch    \\ i3-Blackarch //
-#################################################
-if [ "$(uname -m)" = x86_64 ]
-then
-	echo -e " Using old version of cower to do this.."
-	echo -e " I reccomend letting the script remove pacaur + cower later on..."
-	echo -e " BE PATIENT "
-	echo -e " $(wget http://pkg.sbr.io/archlinux/x86_64/cower-git-9.19.gf2d9c48-1-x86_64.pkg.tar.xz) "
-	pacman -U *.tar.xz --noconfirm
-	rm *.tar.xz
-	wget https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz
-	tar xzvf pacaur.tar.gz
-	cd pacaur
-	makepkg -s --asroot
-	pacman -U *.tar.xz --noconfirm
-	cd ..
-	rm *.tar.gz
-	rm -rf pacaur
-	if [ $HOME/.zshrc ]
+#!/bin/bash 
+# i3-Arch        |      Setup X     |   
+# t60r	        /|\  i3-BlackArch  /|\
+###############################################
+$(cd $HOME)
+$(git clone https://github.com/Blackarch/i3-blackarch.git)
+if [ $HOME/i3-blackarch/.scripts-for-setup ]
 	then
-		$(rm ~/.zshrc)
-		if [ $HOME/.zlogin ] 
-		then
-			$(rm ~/.zlogin)
-		fi
-	fi
-	pacaur -S oh-my-zsh-git --asroot --noconfirm
-	pacaur -S urxvt-tabbedex --asroot --noconfirm
-	pacaur -S urxvt-vtwheel --asroot --noconfirm
-	pacaur -S urxvt-font-size-git --asroot --noconfirm
-	wget https://raw.github.com/i3-Arch/i3config/master/zshrc
-	cp zshrc ~/.zshrc
-	chsh -s $(which zsh)
-	echo " Reboot for it to take changes  ! "
-	echo " Would you like to remove pacaur + cower now ?     Y or N  "
-	read QUESTION
-		if [ $QUESTION == Y -o $QUESTION == y ]
-			then
-				$(pacman -Rs pacaur --noconfirm)
-			else
-				echo
-				echo " You Chose NO - OR An Invalid Character Was Entered "
-		fi
-	echo " Report Errors / Tips to i3-Arch @ irc.freenode.net #blackarch "
-	echo " NOW SETTING UP BACKGROUND  AND REBOOTING INTO NEW SETUP"
-	source background-ASAP
-
-elif [ "$(uname -m)" = i686 ]
-then
-	echo -e " Using old version of cower to do this.."
-	echo -e " I reccomend letting the script remove pacaur + cower later on..."
-	echo -e " BE PATIENT "
-	echo -e " $(wget http://pkg.sbr.io/archlinux/i686/cower-git-9.19.gf2d9c48-1-i686.pkg.tar.xz) "
-
-	pacman -U *.tar.xz --noconfirm
-	rm *.tar.xz
-	wget https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz &&
-	tar xzvf pacaur.tar.gz
-	cd pacaur
-	makepkg -s --asroot
-	pacman -U *.tar.xz --noconfirm
-	cd ..
-	rm *.tar.gz
-	rm -rf pacaur
-	if [ $HOME/.zshrc ]
-	then
-		$(rm ~/.zshrc)
-		if [ $HOME/.zlogin ] 
-		then
-			$(rm ~/.zlogin)
-		fi
-	fi
-	sleep 1
-	pacaur -S oh-my-zsh-git --asroot --noconfirm
-	pacaur -S urxvt-tabbedex --asroot --noconfirm
-	pacaur -S urxvt-vtwheel --asroot --noconfirm
-	pacaur -S urxvt-font-size-git --asroot --noconfirm
-	sleep 2
-	wget https://raw.github.com/i3-Arch/i3config/master/zshrc
-	cp zshrc ~/.zshrc
-	sleep 1
-	chsh -s $(which zsh)
-	echo " Reboot for it to take changes  ! "
-	echo " Would you like to remove pacaur + cower now ?     Y or N  "
-	read QUESTION
-		if [ $QUESTION == Y -o $QUESTION == y ]
-			then
-				$(pacman -Rs pacaur --noconfirm)
-			else
-				echo
-				echo " You Chose NO - OR An Invalid Character Was Entered "
-		fi
-	echo " Report Errors / Tips to i3-Arch @ irc.freenode.net #blackarch "
-	sleep 3
-	echo " NOW SETTING UP BACKGROUND  AND REBOOTING INTO NEW SETUP"
-	source background-ASAP
+		cd "${HOME?}/i3-blackarch/.scripts-for-setup"
+	else
+		echo
+		echo " Where is scripts-for-setup  ? "
 fi
+echo "                "  >> /etc/motd
+echo " Thanks for using i3-Setup " >> /etc/motd
+echo " ::  Type  startx   to start i3  :: "  >> /etc/motd 
+asd() {														
+cat <<"EOT"															
 
+               ...
+             ;::::;
+           ;::::; :;	DON'T FEAR THE REAPER... 
+         ;:::::'   :;        
+        ;:::::;     ;.			-={ i3-BlackArch }=-
+       ,:::::'       ;           OOO\
+       ::::::;       ;          OOOOO\
+       ;:::::;       ;         OOOOOOOO
+      ,;::::::;     ;'         / OOOOOOO
+    ;:::::::::`. ,,,;.        /  / DOOOOOO
+  .';:::::::::::::::::;,     /  /     DOOOO
+ ,::::::;::::::;;;;::::;,   /  /        DOOO
+;`::::::`'::::::;;;::::: ,#/  /          DOOO
+:`:::::::`;::::::;;::: ;::#  /            DOOO
+::`:::::::`;:::::::: ;::::# /              DOO
+`:`:::::::`;:::::: ;::::::#/               DOO
+ :::`:::::::`;; ;:::::::::##                OO
+ ::::`:::::::`;::::::::;:::#                OO
+ `:::::`::::::::::::;'`:;::#                O
+  `:::::`::::::::;' /  / `:#
+   ::::::`:::::;'  /  /   `#
+EOT
+}
+asd
+echo
+echo "              :: Lets Do This ::     "
+echo
+pacman -Syyu
+rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
+pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls
+X -configure
+if [ "$HOME/xorg.conf.new" ]
+	then
+		$(cp $HOME/xorg.conf.new $HOME/xorg.conf)
+		$(rm $HOME/xorg.conf.new)
+	else
+		echo
+		echo " where is xorg.conf.new ? -- skipping"
+fi
+echo
+echo "Setting Up i3 config in ~/.i3/config "
+echo
+wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config
+if [ "$HOME/.i3/config" ]
+		then
+			echo " $(rm -rf ~/.i3) "
+			echo " $(mkdir ~/.i3) "
+			echo " $(mv config ~/.i3/config) "
+	else 
+		echo " $(mkdir ~/.i3) "
+		echo " $(mv config ~/.i3/config) "
+		echo " Things seems fine"
+fi
+echo
+echo " Setting up .Xresources, .vimrc and .xinitrc"
+echo
+cp ~/i3-blackarch/.Xresources ~ 
+cp ~/i3-blackarch/.xinitrc ~
+echo
+echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
+read OPTION1
+	if [ "$OPTION1" == y -o "$OPTION1" == Y ]
+		then
+			echo
+			echo " Thats a big 10-4 "
+				elif [ "$OPTION1" == n -o "$OPTION1" == N ]
+					then
+						$(rm -rf ~/.vim && rm ~/.viminfo)
+						$(wget https://raw.github.com/t60r/i3-blackarch/master/.vimrc)
+							sleep 2
+						$(cp .vimrc ~/.vimrc)
+			else
+				echo
+				echo " An Error Occured "
+				echo " Did you choose 'y'  or 'n' ? "
+	fi
+asd() {
+cat <<"EOT"
+				TUX IS A BLACKARCHER
+                 .88888888:. 
+                88888888.88888. 
+              .8888888888888888. 
+              888888888888888888 
+              88' _`88'_  `88888 
+              88 88 88 88  88888 
+              88_88_::_88_:88888 ~ Sup?
+              88:::,::,:::::8888 
+              88`:::::::::'`8888 
+             .88  `::::'    8:88. 
+            8888            `8:888. 
+          .8888'             `888888. 
+         .8888:..  .::.  ...:'8888888:. 
+        .8888.'     :'     `'::`88:88888 
+       .8888        '         `.888:8888. 
+      888:8     i3  . Archlinux 888:88888 
+    .888:88        .:           888:88888: 
+    8888888.       ::           88:888888 
+    `.::.888.      ::          .88888888 
+   .::::::.888.    ::         :::`8888'.:. 
+  ::::::::::.888   '         .:::::::::::: 
+  ::::::::::::.8    '      .:8::::::::::::. 
+ .::::::::::::::.        .:888::::::::::::: 
+ :::::::::::::::88:.__..:88888:::::::::::' 
+  `'.:::::::::::88888888888.88:::::::::' 
+        `':::_:' -- '' -'-' `':_::::'` 
+EOT
+}
+asd
+echo
+echo " NOW STARTING X       'startx' "
+echo " TIP :: In the future you will need to Run ' startx :: "
+sleep 3 &&
+$(startx)
