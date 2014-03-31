@@ -2,6 +2,8 @@
 # Im new to bash... and still young and learning... so dont hit me .... kthnx
 # This builds pacaur, and sets up oh-my-zsh
 # i3-Arch    \\ i3-Blackarch //
+# t60r
+# trewchainz
 #################################################
 if [ "$(uname -m)" = x86_64 ]
 then
