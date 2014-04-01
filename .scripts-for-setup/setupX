@@ -2,11 +2,11 @@
 # i3-Arch        |      Setup X     |   
 # t60r	        /|\  i3-BlackArch  /|\
 ###############################################
-$(cd $HOME)
-$(git clone https://github.com/Blackarch/i3-blackarch.git)
+cd $HOME
+git clone https://github.com/Blackarch/i3-blackarch.git
 if [ $HOME/i3-blackarch/.scripts-for-setup ]
 	then
-		cd "${HOME?}/i3-blackarch/.scripts-for-setup"
+		cd $HOME/i3-blackarch/.scripts-for-setup
 	else
 		echo
 		echo " Where is scripts-for-setup  ? "
