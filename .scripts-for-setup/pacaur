@@ -21,12 +21,12 @@ then
 	cd ..
 	rm *.tar.gz
 	rm -rf pacaur
-	if [ $HOME/.zshrc ]
+	if [ "$HOME/.zshrc" ]
 	then
-		$(rm ~/.zshrc)
-		if [ $HOME/.zlogin ] 
+		$(rm "$HOME/.zshrc")
+		if [ "$HOME/.zlogin" ] 
 		then
-			$(rm ~/.zlogin)
+			$(rm "$HOME/.zlogin")
 		fi
 	fi
 	pacaur -S oh-my-zsh-git --asroot --noconfirm
@@ -67,12 +67,12 @@ then
 	cd ..
 	rm *.tar.gz
 	rm -rf pacaur
-	if [ $HOME/.zshrc ]
+	if [ "$HOME/.zshrc" ]
 	then
-		$(rm ~/.zshrc)
-		if [ $HOME/.zlogin ] 
+		$(rm "$HOME/.zshrc")
+		if [ "$HOME/.zlogin" ] 
 		then
-			$(rm ~/.zlogin)
+			$(rm "$HOME/.zlogin")
 		fi
 	fi
 	sleep 1
