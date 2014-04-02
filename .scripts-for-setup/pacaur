@@ -39,7 +39,7 @@ then
 	echo " Reboot for it to take changes  ! "
 	echo " Would you like to remove pacaur + cower now ?     Y or N  "
 	read QUESTION
-		if [ $QUESTION == Y -o $QUESTION == y ]
+		if [ "$QUESTION" == Y -o "$QUESTION" == y ]
 			then
 				$(pacman -Rs pacaur --noconfirm)
 			else
