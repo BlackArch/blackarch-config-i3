@@ -44,9 +44,9 @@ asd
 echo
 echo "              :: Lets Do This ::     "
 echo
-pacman -Syyu
+pacman -Syyu --noconfirm
 rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
-pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls
+pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
 X -configure
 if [ "$HOME/xorg.conf.new" ]
 	then
