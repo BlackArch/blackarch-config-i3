@@ -29,10 +29,10 @@ then
 			$(rm "$HOME/.zlogin")
 		fi
 	fi
-	pacaur -S oh-my-zsh-git --asroot --noconfirm
-	pacaur -S urxvt-tabbedex --asroot --noconfirm
-	pacaur -S urxvt-vtwheel --asroot --noconfirm
-	pacaur -S urxvt-font-size-git --asroot --noconfirm
+	pacaur -S oh-my-zsh-git --asroot --noconfirm --noedit
+	pacaur -S urxvt-tabbedex --asroot --noconfirm --noedit
+	pacaur -S urxvt-vtwheel --asroot --noconfirm --noedit
+	pacaur -S urxvt-font-size-git --asroot --noconfirm --noedit
 	wget https://raw.github.com/i3-Arch/i3config/master/zshrc
 	cp zshrc ~/.zshrc
 	chsh -s $(which zsh)
@@ -75,20 +75,17 @@ then
 			$(rm "$HOME/.zlogin")
 		fi
 	fi
-	sleep 1
-	pacaur -S oh-my-zsh-git --asroot --noconfirm
-	pacaur -S urxvt-tabbedex --asroot --noconfirm
-	pacaur -S urxvt-vtwheel --asroot --noconfirm
-	pacaur -S urxvt-font-size-git --asroot --noconfirm
-	sleep 2
-	wget https://raw.github.com/i3-Arch/i3config/master/zshrc
-	cp zshrc ~/.zshrc
-	sleep 1
+	pacaur -S oh-my-zsh-git --asroot --noconfirm --noedit
+	pacaur -S urxvt-tabbedex --asroot --noconfirm --noedit
+	pacaur -S urxvt-vtwheel --asroot --noconfirm --noedit
+	pacaur -S urxvt-font-size-git --asroot --noconfirm --noedit
+	wget https://raw.github.com/i3-Arch/i3config/master/.zshrc
+	cp .zshrc ~/.zshrc
 	chsh -s $(which zsh)
 	echo " Reboot for it to take changes  ! "
 	echo " Would you like to remove pacaur + cower now ?     Y or N  "
 	read QUESTION
-		if [ $QUESTION == Y -o $QUESTION == y ]
+		if [ "$QUESTION" == Y -o "$QUESTION" == y ]
 			then
 				$(pacman -Rs pacaur --noconfirm)
 			else
