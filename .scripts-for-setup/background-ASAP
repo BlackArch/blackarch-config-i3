@@ -20,7 +20,7 @@ if [ "$WTFBBQ" == y -o "$WTFBBQ" == Y ]
 		echo " Understood "
 fi
 sleep 1 &&
-echo " If You installed out custom zsh config (pacaur script) you need to reboot"
+echo " If You installed our custom zsh config (pacaur script) you need to reboot"
 echo " For changes to take effect since you are using root"
 echo " Do you need to reboot ?      (Y) or (N)  "
 read WTFBBQ2
