@@ -33,8 +33,8 @@ then
 	pacaur -S urxvt-tabbedex --asroot --noconfirm --noedit
 	pacaur -S urxvt-vtwheel --asroot --noconfirm --noedit
 	pacaur -S urxvt-font-size-git --asroot --noconfirm --noedit
-	wget https://raw.github.com/i3-Arch/i3config/master/zshrc
-	cp zshrc ~/.zshrc
+	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.zshrc
+	cp .zshrc ~/.zshrc
 	chsh -s $(which zsh)
 	echo " Reboot for it to take changes  ! "
 	echo " Would you like to remove pacaur + cower now ?     Y or N  "
