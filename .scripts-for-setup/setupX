@@ -93,7 +93,7 @@ read OPTION1
 				echo " An Error Occured "
 				echo " Did you choose 'y'  or 'n' ? "
 	fi
-asd() {
+asd2() {
 cat <<"EOT"
 				TUX IS A BLACKARCHER
                  .88888888:. 
@@ -124,7 +124,7 @@ cat <<"EOT"
         `':::_:' -- '' -'-' `':_::::'` 
 EOT
 }
-asd
+asd2
 echo
 echo " NOW STARTING X       'startx' "
 echo " TIP :: In the future you will need to Run ' startx :: "
