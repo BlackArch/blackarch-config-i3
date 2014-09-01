@@ -1,11 +1,11 @@
 i3-blackarch
 ============
-
+#ABOUT
 This project aims to provide the user with an i3wm desktop on a clean netinstall of BlackArch linux net-install.  
 
 Installation
 ============
-
+#INSTALLATION
 1. Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
 2. Reboot machine to ensure successful installation
 3. wget http://7.ly/setupX 
