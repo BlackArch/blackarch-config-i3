@@ -2,19 +2,23 @@
 # i3-Arch        |      Setup X     |   
 # t60r	        /|\  i3-BlackArch  /|\
 ###############################################
-cd $HOME
+
+PartOne() {
+cd "$HOME"
 git clone https://github.com/Blackarch/i3-blackarch.git
-if [ $HOME/i3-blackarch/.scripts-for-setup ]
+if [ -d "$HOME"/i3-blackarch/.scripts-for-setup ]
 	then
 		cd $HOME/i3-blackarch/.scripts-for-setup
 	else
-		echo
-		echo " Where is scripts-for-setup  ? "
+		printf " \n\nWhere is scripts-for-setup  ? \n\n"
 fi
 echo "                "  >> /etc/motd
 echo " Thanks for using i3-Setup " >> /etc/motd
 echo " ::  Type  startx   to start i3  :: "  >> /etc/motd 
-asd() {														
+}
+
+PartArt() {														
+clear
 cat <<"EOT"															
 
                ...
@@ -40,60 +44,50 @@ cat <<"EOT"
    ::::::`:::::;'  /  /   `#
 EOT
 }
-asd
-echo
-echo "              :: Lets Do This ::     "
-echo
-pacman -Syyu --noconfirm
-rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
-pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
-X -configure
-if [ "$HOME/xorg.conf.new" ]
-	then
-		$(cp $HOME/xorg.conf.new $HOME/xorg.conf)
-		$(rm $HOME/xorg.conf.new)
+
+PartTwo() {
+	printf "\n              :: Lets Do This ::     \n"
+	pacman -Syyu --noconfirm
+	rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
+	pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
+	X -configure
+	if [ -f "$HOME"/xorg.conf.new ]; then
+		mv "$HOME"/xorg.conf.new "$HOME"/xorg.conf
 	else
-		echo
-		echo " where is xorg.conf.new ? -- skipping"
-fi
-echo
-echo "Setting Up i3 config in ~/.i3/config "
-echo
-wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config
-if [ "$HOME/.i3/config" ]
-		then
-			echo " $(rm -rf ~/.i3) "
-			echo " $(mkdir ~/.i3) "
-			echo " $(mv config ~/.i3/config) "
-	else 
-		echo " $(mkdir ~/.i3) "
-		echo " $(mv config ~/.i3/config) "
-		echo " Things seems fine"
-fi
-echo
-echo " Setting up .Xresources, .vimrc and .xinitrc"
-echo
-cp ~/i3-blackarch/.Xresources ~ 
-cp ~/i3-blackarch/.xinitrc ~
-echo
-echo " Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   "
-read OPTION1
-	if [ "$OPTION1" == y -o "$OPTION1" == Y ]
-		then
-			echo
-			echo " Thats a big 10-4 "
-				elif [ "$OPTION1" == n -o "$OPTION1" == N ]
-					then
-						$(rm -rf ~/.vim && rm ~/.viminfo)
-						$(wget https://raw.github.com/t60r/i3-blackarch/master/.vimrc)
-							sleep 2
-						$(cp .vimrc ~/.vimrc)
-			else
-				echo
-				echo " An Error Occured "
-				echo " Did you choose 'y'  or 'n' ? "
+		printf "\n\n where is xorg.conf.new ? -- skipping\n\n"
 	fi
-asd2() {
+	printf "Setting Up i3 config in ~/.i3/config "
+	wget https://raw.github.com/BlackArch/i3-blackarch/master/.i3/config
+	if [ -f "$HOME"/.i3/config ]; then
+		rm -rf ~/.i3
+		mkdir ~/.i3
+		mv config ~/.i3/config
+	else 
+		mkdir ~/.i3
+		mv config ~/.i3/config
+		printf " Things seems fine"
+	fi
+	printf " \n\nSetting up .Xresources, .vimrc and .xinitrc\n\n"
+	cp ~/i3-blackarch/.Xresources ~ 
+	cp ~/i3-blackarch/.xinitrc ~
+	printf "\n\n Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   \n\n"
+	printf "\n Choice: "
+	read OPTION1
+	if [ "$OPTION1" == y -o "$OPTION1" == Y ]; then
+		printf " \nThats a big 10-4 \n"
+	elif [ "$OPTION1" == n -o "$OPTION1" == N ]; then
+		rm -rf ~/.vim && rm ~/.viminfo
+		wget https://raw.github.com/t60r/i3-blackarch/master/.vimrc
+		cp .vimrc ~/.vimrc
+	else
+		printf "\n An Error Occured \n\n"
+		printf "\n Did you choose 'y'  or 'n' ? \n\n"
+	fi
+
+}
+
+PartArt2() {
+clear
 cat <<"EOT"
 				TUX IS A BLACKARCHER
                  .88888888:. 
@@ -123,10 +117,19 @@ cat <<"EOT"
   `'.:::::::::::88888888888.88:::::::::' 
         `':::_:' -- '' -'-' `':_::::'` 
 EOT
-}
-asd2
-echo
-echo " NOW STARTING X       'startx' "
-echo " TIP :: In the future you will need to Run ' startx :: "
+printf "\n\n NOW STARTING X       'startx' \n\n"
+printf "\n\n TIP :: In the future you will need to Run ' startx :: \n\n"
 sleep 3 &&
 $(startx)
+}
+
+MainThing() {
+	PartOne	
+	PartArt
+	PartTwo
+	PartArt2
+}
+
+MainThing
+
+#EOF
