@@ -13,17 +13,16 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 
 PartOne() {
-cd "$HOME"
-git clone https://github.com/Blackarch/i3-blackarch.git
-if [ -d "$HOME"/i3-blackarch/.scripts-for-setup ]
-	then
+	cd "$HOME"
+	git clone https://github.com/Blackarch/i3-blackarch.git
+	if [ -d "$HOME"/i3-blackarch/.scripts-for-setup ]; then
 		cd $HOME/i3-blackarch/.scripts-for-setup
 	else
 		printf " \n\nWhere is scripts-for-setup  ? \n\n"
-fi
-echo "                "  >> /etc/motd
-echo " Thanks for using i3-Setup " >> /etc/motd
-echo " ::  Type  startx   to start i3  :: "  >> /etc/motd 
+	fi
+	echo "                "  >> /etc/motd
+	echo " Thanks for using i3-Setup " >> /etc/motd
+	echo " ::  Type  startx   to start i3  :: "  >> /etc/motd 
 }
 
 PartArt() {														
@@ -86,7 +85,7 @@ PartTwo() {
 	if [ "$OPTION1" == y -o "$OPTION1" == Y ]; then
 		printf " \nThats a big 10-4 \n"
 	elif [ "$OPTION1" == n -o "$OPTION1" == N ]; then
-		rm -rf ~/.vim && rm ~/.viminfo
+		rm -rf ~/.vim
 		wget https://raw.github.com/t60r/i3-blackarch/master/.vimrc
 		cp .vimrc ~/.vimrc
 	else
@@ -246,9 +245,9 @@ MainThing() {
 	PartArt
 	BobTheBuilder
 	PartTwo
-	SetItUp
 	UrxvtStuff
 	HardWare
+	SetItUp
 	PartArt2
 }
 
