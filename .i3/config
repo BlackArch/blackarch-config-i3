@@ -216,4 +216,4 @@ bar {
 
 # AUTOSTART
 exec --no-startup-id xset dpms 600
-exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id sh /root/.fehbg
