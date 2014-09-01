@@ -115,7 +115,7 @@ HardWare() {
 SetItUp() {
 	mkdir "$HOME"/.wallpapers && cd "$HOME"/.wallpapers
 	wget https://raw.githubusercontent.com/t60r/blackarch-site/master/images/blackarch-wallpaper-simple.png
-	echo "'feh --bg-scale ~/.wallpapers/blackarch-wallpaper-simple.png'" > "$HOME"/.fehbg
+	echo "'feh --bg-scale /root/.wallpapers/blackarch-wallpaper-simple.png'" > "$HOME"/.fehbg
 	printf "\n\n Downloading and Setting up Official Blackarch Wallpaper in .wallpapers\n\n"
 	printf " Never worry about a wallpaper :)    -- This is for i3-blackarch --look in-- '~/.i3/config' " 
 	cd "$HOME"
