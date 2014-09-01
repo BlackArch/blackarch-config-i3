@@ -16,7 +16,7 @@ PartOne() {
 	cd "$HOME"
 	git clone https://github.com/Blackarch/i3-blackarch.git
 	if [ -d "$HOME"/i3-blackarch/.scripts-for-setup ]; then
-		cd $HOME/i3-blackarch/.scripts-for-setup
+		cd "$HOME"/i3-blackarch/.scripts-for-setup
 	else
 		printf " \n\nWhere is scripts-for-setup  ? \n\n"
 	fi
@@ -57,7 +57,6 @@ sleep 3
 PartTwo() {
 	printf "\n              :: Lets Do This ::     \n"
 	pacman -Syyu --noconfirm
-	rm -rf /usr/share/fonts/* &&    ## The script will fail without this line... Dont worry ... fonts will be taken care of
 	pacman -S base-devel xorg-server xorg-server-utils feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
 	X -configure
 	if [ -f "$HOME"/xorg.conf.new ]; then
@@ -119,6 +118,7 @@ SetItUp() {
 	echo "'feh --bg-scale ~/.wallpapers/blackarch-wallpaper-simple.png'" > "$HOME"/.fehbg
 	printf "\n\n Downloading and Setting up Official Blackarch Wallpaper in .wallpapers\n\n"
 	printf " Never worry about a wallpaper :)    -- This is for i3-blackarch --look in-- '~/.i3/config' " 
+	cd "$HOME"
 	rm -rf "$HOME"/i3-blackarch
 }
 
@@ -133,7 +133,7 @@ BobTheBuilder() {
 		if [ "$thatquestion" == Y -o "$thatquestion" == y ]; then
 			printf "\033[1m\n\n ${green}Setting up pacaur for future use \n\n\033[0m"
 			pacman -Syy expac yajl --noconfirm
-			mkdir "$HOME"/build-dir && cd build-dir
+			mkdir "$HOME"/build-dir && cd "$HOME"/build-dir
 			wget https://aur.archlinux.org/packages/co/cower/cower.tar.gz && tar xzvf cower.tar.gz
 			cd cower && makepkg -s --asroot
 			pacman -U "$HOME"/build-dir/cower/*.xz --noconfirm
@@ -163,7 +163,7 @@ UrxvtStuff() {
 	cd "$HOME"/build-dir/urxvt-tabbedex && makepkg -s --asroot
 	pacman -U "$HOME"/build-dir/urxvt-tabbedex/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/oh/oh-my-zsh-git/oh-my-zsh-git.tar.gz && tar xzvf oh-my-zsh-git.tar.gz
-	cd "$HOME"/build-dir/oh-my-zsh-git && makepkg -s --asroot
+	cd "$HOME"/build-dir/oh-my-zsh-git && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/oh-my-zsh-git/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-vtwheel/urxvt-vtwheel.tar.gz && tar xzvf urxvt-vtwheel.tar.gz
 	cd "$HOME"/build-dir/urxvt-vtwheel && makepkg -s --asroot
