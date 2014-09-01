@@ -1,7 +1,7 @@
-#ABOUT  ->  i3-blackarch
-============
-This project aims to provide the user with an i3wm desktop on a clean netinstall of BlackArch linux net-install.  
+#About
+===========
 
+This project aims to provide the user with an i3wm setup on an install of BlackArch linux.
 
 
 
