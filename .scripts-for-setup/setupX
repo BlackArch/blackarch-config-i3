@@ -146,11 +146,11 @@ BobTheBuilder() {
 			mkdir "$HOME"/build-dir && cd build-dir
 			wget https://aur.archlinux.org/packages/co/cower/cower.tar.gz && tar xzvf cower.tar.gz
 			cd cower && makepkg -s --asroot
-			pacman -U /home/"$namebro"/build-dir/cower/*.xz --noconfirm
+			pacman -U "$HOME"/build-dir/cower/*.xz --noconfirm
 			cd "$HOME"/build-dir
 			wget https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz && tar xzvf pacaur.tar.gz
 			cd pacaur && makepkg -s --asroot
-			pacman -U /home/"$namebro"/build-dir/pacaur/*.xz --noconfirm
+			pacman -U "$HOME"/build-dir/pacaur/*.xz --noconfirm
 			cd "$HOME" && rm -rf "$HOME"/build-dir
 		else
 			printf "\033[1m\n\n ${yellow}You entered no\n\033[0m"
