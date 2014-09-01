@@ -75,9 +75,10 @@ PartTwo() {
 		mv config ~/.i3/config
 		printf " Things seems fine"
 	fi
-	printf " \n\nSetting up .Xresources, .vimrc and .xinitrc\n\n"
+	printf " \n\nSetting up .zshrc, .Xresources, .vimrc and .xinitrc\n\n"
 	cp ~/i3-blackarch/.Xresources ~ 
 	cp ~/i3-blackarch/.xinitrc ~
+	cp ~/i3-blackarch/.zshrc ~
 	printf "\n\n Do you want the default vim config from blackarch ? Choose 'N' for i3 vim setup   y or n   \n\n"
 	printf "\n Choice: "
 	read OPTION1
@@ -174,20 +175,8 @@ UrxvtStuff() {
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/pr/prezto-git/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz
 	cd "$HOME"/build-dir/prezto-git && makepkg -s --asroot
 	pacman -U "$HOME"/build-dir/prezto-git/*.xz --noconfirm 
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/xc/xcursor-ecliz-arch/xcursor-ecliz-arch.tar.gz && tar xzvf xcursor-ecliz-arch.tar.gz
-	cd "$HOME"/build-dir/xcursor-ecliz-arch && makepkg -s --asroot
-	if [ $(uname -m) = x86_64 ]; then
-		pacman -U "$HOME"/build-dir/xcursor-ecliz-arch/*x86_64*.xz --noconfirm
-	else	
-		pacman -U "$HOME"/build-dir/xcursor-ecliz-arch/*i686*.xz --noconfirm
-	fi
-	clear
-	printf "\nWould You like to Change default shell to ZSH Shell ? ${white}[${green}Y${white}|${red}N${white}] \n\n"
-	printf "\n Choice: "
-	read datshiz
-		if [ "$datshiz" == y -o "datshiz" == Y ]; then
-			chsh -s $(which zsh)
-		fi
+	printf "\n\n${green}Changing shell to ${yellow}ZSH\n\n"
+	chsh -s $(which zsh)
 	cd "$HOME"
 	rm -rf "$HOME"/build-dir
 }
