@@ -159,7 +159,7 @@ UrxvtStuff() {
 	if [ ! -d /home/"$namebro"/build-dir ]; then
 		mkdir "$HOME"/build-dir
 	fi
-	pacman -Syy git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm
+	pacman -Syy zsh-syntax-highlighting git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-tabbedex/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz
 	cd "$HOME"/build-dir/urxvt-tabbedex && makepkg -s --asroot
 	pacman -U "$HOME"/build-dir/urxvt-tabbedex/*.xz --noconfirm
