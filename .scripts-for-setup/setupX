@@ -86,6 +86,26 @@ PartTwo() {
 
 }
 
+
+SetItUp() {
+	mkdir "$HOME"/.wallpapers && cd "$HOME"/.wallpapers
+	wget https://raw.githubusercontent.com/t60r/blackarch-site/master/images/blackarch-wallpaper-simple.png
+	echo "'feh --bg-scale ~/.wallpapers/wallpaper.png'" > "$HOME"/.fehbg
+	printf "\n\n Downloading and Setting up Official Blackarch Wallpaper in .wallpapers\n\n"
+	printf " Never worry about a wallpaper :)    -- This is for i3-blackarch --look in-- '~/.i3/config' " 
+	rm -rf "$HOME"/i3-blackarch
+	printf "\n\n If You installed our custom zsh config (pacaur script) you need to reboot\n\n"
+	printf "\n For changes to take effect since you are using root\n\n"
+	printf "\n Do you need to reboot ?      (Y) or (N)  \n\n"
+	read WTFBBQ2
+	if [ "$WTFBBQ2" == Y -o "$WTFBBQ2" == y ]; then
+		reboot
+	else
+		printf "\n Thanks for using i3-blackarch  ! \n"
+	fi
+}
+
+
 PartArt2() {
 clear
 cat <<"EOT"
@@ -127,6 +147,7 @@ MainThing() {
 	PartOne	
 	PartArt
 	PartTwo
+	SetItUp
 	PartArt2
 }
 
