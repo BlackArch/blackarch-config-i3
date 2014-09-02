@@ -19,7 +19,7 @@ FirstThing() {
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 	locale-gen
 	LANG=en_US.utf8
-	printf "\n\033[1m${red}Setting locales system wide.... ${yellow}via /etc/locale.conf\033[0m"
+	printf "\n\033[1m${red}Setting locales system wide.... ${yellow}via /etc/locale.conf\n\n\033[0m"
 	locale > /etc/locale.conf
 }
 
