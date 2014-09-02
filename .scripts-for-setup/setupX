@@ -14,6 +14,9 @@ yellow=$(tput setaf 3)
 
 FirstThing() {
 	printf "\033[1m\n\n ${green}Adding UTF-8 locales for i3 setup \n\n\033[0m"
+	rm /usr/share/metasploit/lib/rex/proto/sip.rb   ## Will remove after conflict fixed
+	pacman -Syyu --noconfirm
+	pacman -S glibc --noconfirm
 	echo "en_US-UTF-8 UTF-8" >> /etc/locale.gen
 	locale-gen
 	LANG=en_US.utf8
@@ -64,7 +67,6 @@ sleep 3
 
 PartTwo() {
 	printf "\n              :: Lets Do This ::     \n"
-	pacman -Syyu --noconfirm
 	pacman -S base-devel xorg-server xorg-server-utils rxvt feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
 	X -configure
 	if [ -f "$HOME"/xorg.conf.new ]; then
