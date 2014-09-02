@@ -13,7 +13,7 @@ green=$(tput setaf 2)
 yellow=$(tput setaf 3)
 
 FirstThing() {
-	printf "\033[1m\n\n ${green}Adding UTF-8 locales for i3 setup \n\n\033[0m"
+	printf "\033[1m\n\n ${green}Updating/Upgrading & Adding UTF-8 locales for i3 setup \n\n\033[0m"
 	rm /usr/share/metasploit/lib/rex/proto/sip.rb   ## Will remove after conflict fixed
 	pacman -Syyu --noconfirm
 	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
