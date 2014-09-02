@@ -88,10 +88,10 @@ PartTwo() {
 	cp ~/i3-blackarch/.Xresources ~ 
 	cp ~/i3-blackarch/.xinitrc ~
 	cp ~/i3-blackarch/.zshrc ~
-	printf "\n\n ${green}Do you want the default vim config from blackarch ?\n"
-	printf "\n\n ${yellow}Choose ${white}[${red}Y${white}|${green}N${white}]"
-	printf "\nChoose${yellow}'${red}N${yellow}'${yellow} for i3 vim setup \n\n"
-	printf "\n Choice: "
+	printf "\033[1m\n\n ${green}Do you want the default vim config from blackarch ?\n\033[0m"
+	printf "\033[1m\n\n ${yellow}Choose ${white}[${red}Y${white}|${green}N${white}]\033[0m"
+	printf "\033[1m\nChoose${yellow}'${red}N${yellow}'${yellow} for i3 vim setup \n\n\033[0m"
+	printf "\033[1m\n${green}Choice: ${white}\033[0m"
 	read OPTION1
 	if [ "$OPTION1" == y -o "$OPTION1" == Y ]; then
 		printf " \nThats a big 10-4 \n"
@@ -147,11 +147,11 @@ BobTheBuilder() {
 			pacman -Syy expac yajl --noconfirm
 			mkdir "$HOME"/build-dir && cd "$HOME"/build-dir
 			wget https://aur.archlinux.org/packages/co/cower/cower.tar.gz && tar xzvf cower.tar.gz
-			cd cower && makepkg -s --asroot
+			cd cower && makepkg -s --asroot --noconfirm
 			pacman -U "$HOME"/build-dir/cower/*.xz --noconfirm
 			cd "$HOME"/build-dir
 			wget https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz && tar xzvf pacaur.tar.gz
-			cd pacaur && makepkg -s --asroot
+			cd pacaur && makepkg -s --asroot --noconfirm
 			pacman -U "$HOME"/build-dir/pacaur/*.xz --noconfirm
 			cd "$HOME" && rm -rf "$HOME"/build-dir
 		else
@@ -172,19 +172,19 @@ UrxvtStuff() {
 	fi
 	pacman -Syy zsh-syntax-highlighting git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-tabbedex/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz
-	cd "$HOME"/build-dir/urxvt-tabbedex && makepkg -s --asroot
+	cd "$HOME"/build-dir/urxvt-tabbedex && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/urxvt-tabbedex/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/oh/oh-my-zsh-git/oh-my-zsh-git.tar.gz && tar xzvf oh-my-zsh-git.tar.gz
 	cd "$HOME"/build-dir/oh-my-zsh-git && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/oh-my-zsh-git/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-vtwheel/urxvt-vtwheel.tar.gz && tar xzvf urxvt-vtwheel.tar.gz
-	cd "$HOME"/build-dir/urxvt-vtwheel && makepkg -s --asroot
+	cd "$HOME"/build-dir/urxvt-vtwheel && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/urxvt-vtwheel/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-font-size-git/urxvt-font-size-git.tar.gz && tar xzvf urxvt-font-size-git.tar.gz
-	cd "$HOME"/build-dir/urxvt-font-size-git && makepkg -s --asroot				
+	cd "$HOME"/build-dir/urxvt-font-size-git && makepkg -s --asroot	--noconfirm		
 	pacman -U "$HOME"/build-dir/urxvt-font-size-git/*.xz --noconfirm
 	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/pr/prezto-git/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz
-	cd "$HOME"/build-dir/prezto-git && makepkg -s --asroot
+	cd "$HOME"/build-dir/prezto-git && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/prezto-git/*.xz --noconfirm 
 	printf "\n\n${green}Changing shell to ${yellow}ZSH\n\n"
 	chsh -s $(which zsh)
