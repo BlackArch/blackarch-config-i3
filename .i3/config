@@ -61,6 +61,9 @@ set $WS8   8|foo
 set $WS9   9|bar
 set $WS10 10|BlackArch
 
+#Transparency
+bindsym $mod+i exec transset-df -a
+
 # WINDOW CONTROL 
 ## Float everything
 #for_window [class="[.]*"] floating enable 
