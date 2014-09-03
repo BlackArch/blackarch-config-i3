@@ -32,7 +32,7 @@ PartOne() {
 	else
 		printf " \n\nWhere is scripts-for-setup  ? \n\n"
 	fi
-	echo -en "\n\nThanks for using i3-Setup\n\n::  Type  startx   to start i3  :: \n\n"  >> /etc/motd 
+	echo -en " \n\nThanks for using i3-Setup\n\n ::  Type  startx   to start i3  :: \n\n"  >> /etc/motd 
 }
 
 PartArt() {														
@@ -65,8 +65,8 @@ sleep 3
 }
 
 PartTwo() {
-	printf "\n              :: Lets Do This ::     \n"
-	pacman -S base-devel xcompmgr transset-df xorg-server xorg-server-utils rxvt feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
+	printf "\033[1m\n    ${red} :: ${green}Lets Do This ${red}::     \n\033[0m"
+	pacman -S base-devel vimpager xcompmgr transset-df xorg-server xorg-server-utils rxvt feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
 	X -configure
 	if [ -f "$HOME"/xorg.conf.new ]; then
 		mv "$HOME"/xorg.conf.new "$HOME"/xorg.conf
