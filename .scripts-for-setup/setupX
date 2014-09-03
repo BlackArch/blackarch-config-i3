@@ -85,6 +85,7 @@ PartTwo() {
 		printf " Things seems fine"
 	fi
 	printf " \n\nSetting up .zshrc, .Xresources, .vimrc and .xinitrc\n\n"
+	cp ~/i3-blackarch/i3status.conf /etc/i3status.conf
 	cp ~/i3-blackarch/.Xresources ~ 
 	cp ~/i3-blackarch/.xinitrc ~
 	cp ~/i3-blackarch/.zshrc ~
