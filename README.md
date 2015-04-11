@@ -10,7 +10,7 @@
 
 **2.** Reboot machine to ensure successful installation
 
-**3.** wget http://7.ly/setupX 
+**3.** wget https://goo.gl/Onz3Kr -O setupX 
 
 
 - IF THE ABOVE LINK RETURNS NOTHING	... USE THIS
