@@ -6,7 +6,7 @@
 
 #Installation
 
-**1.** Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/download.html
+**1.** Follow installation instructions for either the x86_64 or i686 net-install on http://www.blackarch.org/downloads.html
 
 **2.** Reboot machine to ensure successful installation
 
