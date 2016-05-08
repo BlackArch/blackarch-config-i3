@@ -10,6 +10,9 @@
 
 **2.** Reboot machine to ensure successful installation
 
+
+	[ Notice: May need to install 'wget' via 'pacman -S wget' ]
+
 **3.** wget https://goo.gl/Onz3Kr -O setupX 
 
 
