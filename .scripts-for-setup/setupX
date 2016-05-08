@@ -171,19 +171,19 @@ UrxvtStuff() {
 		mkdir "$HOME"/build-dir
 	fi
 	pacman -Syy zsh-syntax-highlighting git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-tabbedex/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz
+	cd "$HOME"/build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz
 	cd "$HOME"/build-dir/urxvt-tabbedex && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/urxvt-tabbedex/*.xz --noconfirm
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/oh/oh-my-zsh-git/oh-my-zsh-git.tar.gz && tar xzvf oh-my-zsh-git.tar.gz
+	cd "$HOME"/build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/oh-my-zsh-git.tar.gz && tar xzvf oh-my-zsh-git.tar.gz
 	cd "$HOME"/build-dir/oh-my-zsh-git && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/oh-my-zsh-git/*.xz --noconfirm
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-vtwheel/urxvt-vtwheel.tar.gz && tar xzvf urxvt-vtwheel.tar.gz
+	cd "$HOME"/build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-vtwheel.tar.gz && tar xzvf urxvt-vtwheel.tar.gz
 	cd "$HOME"/build-dir/urxvt-vtwheel && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/urxvt-vtwheel/*.xz --noconfirm
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/ur/urxvt-font-size-git/urxvt-font-size-git.tar.gz && tar xzvf urxvt-font-size-git.tar.gz
+	cd "$HOME"/build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-font-size-git.tar.gz && tar xzvf urxvt-font-size-git.tar.gz
 	cd "$HOME"/build-dir/urxvt-font-size-git && makepkg -s --asroot	--noconfirm		
 	pacman -U "$HOME"/build-dir/urxvt-font-size-git/*.xz --noconfirm
-	cd "$HOME"/build-dir && wget https://aur.archlinux.org/packages/pr/prezto-git/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz
+	cd "$HOME"/build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz
 	cd "$HOME"/build-dir/prezto-git && makepkg -s --asroot --noconfirm
 	pacman -U "$HOME"/build-dir/prezto-git/*.xz --noconfirm 
 	printf "\n\n${green}Changing shell to ${yellow}ZSH\n\n"
