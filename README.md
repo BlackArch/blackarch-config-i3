@@ -21,7 +21,6 @@
 
 **4.** Run 'source setupX'
 	
-**5.** +OPTIONAL+    Once X has started ; open a terminal and run 'source pacaur'
 		
 			-={ You may want to edit .zshrc :: To help with local completion }=- 
 						-={  TIP : SEARCH FOR 'cocky'  in .zshrc }=-
