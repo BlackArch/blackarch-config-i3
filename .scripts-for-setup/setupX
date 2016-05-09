@@ -185,6 +185,7 @@ UrxvtStuff() {
 	#su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz"
 	#su builder -c "cd /home/builder && cd build-dir/prezto-git && makepkg -s --noconfirm"
 	#pacman -U /home/builder/build-dir/prezto-git/*.xz --noconfirm 
+	userdel -r builder # Remove builder user
 	printf "\n\n${green}Changing shell to ${yellow}ZSH\n\n"
 	chsh -s $(which zsh)
 	cd "$HOME"
@@ -239,7 +240,6 @@ MainThing() {
 	HardWare
 	SetItUp
 	PartArt2
-	userdel -r builder # remove the builder user we created to build stuff
 }
 
 MainThing
