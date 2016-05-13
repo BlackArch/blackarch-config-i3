@@ -85,7 +85,7 @@ PartTwo() {
 		printf " Things seem fine"
 	fi
 	printf " \n\nSetting up .zshrc, .Xresources, .vimrc and .xinitrc\n\n"
-	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.zshrc2 -O .zshrc
+	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.zshrc2 -O .zshrc  ##Leaving this to pull from my repo instead of blackarch actually
 	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.xinitrc
 	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.Xresources
 	wget https://raw.githubusercontent.com/Blackarch/i3-blackarch/master/i3status.conf
@@ -93,6 +93,12 @@ PartTwo() {
 	cp .Xresources ~ 
 	cp .xinitrc ~
 	cp .zshrc ~
+	wget https://raw.githubusercontent.com/i3-Arch/i3config/ecliz-arch.tar.gz
+	tar xzvf ecliz-arch.tar.gz
+	rm ecliz-arch.tar.gz
+	mv ecliz-arch default
+	mv /usr/share/icons/default/ /usr/share/icons/bak-default
+	mv default /usr/share/icons/
 	printf "\033[1m\n\n ${green}Do you want the default vim config from blackarch ?\n\033[0m"
 	printf "\033[1m\n\n ${yellow}Choose ${white}[${red}Y${white}|${green}N${white}]\033[0m"
 	printf "\033[1m\nChoose${yellow}'${red}N${yellow}'${yellow} for i3 vim setup \n\n\033[0m"
