@@ -88,7 +88,8 @@ PartTwo() {
 	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.zshrc2 -O .zshrc
 	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.xinitrc
 	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/.Xresources
-	wget https://raw.githubusercontent.com/i3-Arch/i3config/master/i3status.conf
+	wget https://raw.githubusercontent.com/Blackarch/i3-blackarch/master/i3status.conf
+	cp i3status.conf ~/.i3/
 	cp .Xresources ~ 
 	cp .xinitrc ~
 	cp .zshrc ~
