@@ -93,7 +93,7 @@ PartTwo() {
 	cp .Xresources ~ 
 	cp .xinitrc ~
 	cp .zshrc ~
-	wget https://raw.githubusercontent.com/i3-Arch/i3config/ecliz-arch.tar.gz
+	wget https://raw.githubusercontent.com/i3-Arch/i3config/raw/master/ecliz-arch.tar.gz
 	tar xzvf ecliz-arch.tar.gz
 	rm ecliz-arch.tar.gz
 	mv ecliz-arch default
