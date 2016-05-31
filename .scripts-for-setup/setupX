@@ -180,18 +180,12 @@ UrxvtStuff() {
 	su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz"
 	su builder -c "cd /home/builder && cd build-dir/urxvt-tabbedex && makepkg -s --noconfirm"
 	pacman -U /home/builder/build-dir/urxvt-tabbedex/*.xz --noconfirm
-	su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/oh-my-zsh-git.tar.gz && tar xzvf oh-my-zsh-git.tar.gz"
-	su builder -c "cd /home/builder && cd build-dir/oh-my-zsh-git && makepkg -s --noconfirm"
-	pacman -U /home/builder/build-dir/oh-my-zsh-git/*.xz --noconfirm
 	su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-vtwheel.tar.gz && tar xzvf urxvt-vtwheel.tar.gz"
 	su builder -c "cd /home/builder && cd build-dir/urxvt-vtwheel && makepkg -s --noconfirm"
 	pacman -U /home/builder/build-dir/urxvt-vtwheel/*.xz --noconfirm
 	su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-font-size-git.tar.gz && tar xzvf urxvt-font-size-git.tar.gz"
 	su builder -c "cd /home/builder && cd build-dir/urxvt-font-size-git && makepkg -s	--noconfirm"
 	pacman -U /home/builder/build-dir/urxvt-font-size-git/*.xz --noconfirm
-	#su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/prezto-git.tar.gz && tar xzvf prezto-git.tar.gz"
-	#su builder -c "cd /home/builder && cd build-dir/prezto-git && makepkg -s --noconfirm"
-	#pacman -U /home/builder/build-dir/prezto-git/*.xz --noconfirm 
 	userdel -r builder # Remove builder user
 	printf "\n\n${green}Changing shell to ${yellow}ZSH\n\n"
 	chsh -s $(which zsh)
