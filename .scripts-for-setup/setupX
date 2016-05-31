@@ -66,7 +66,7 @@ sleep 3
 
 PartTwo() {
 	printf "\033[1m\n    ${red} :: ${green}Lets Do This ${red}::     \n\033[0m"
-	pacman -S base-devel vimpager xcompmgr transset-df xorg-server xorg-server-utils rxvt feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm
+	pacman -S base-devel vimpager xcompmgr transset-df xorg-server xorg-server-utils rxvt feh xorg-font-util xorg-xinit xterm i3-wm i3status dmenu ttf-dejavu xf86-video-vesa xf86-input-synaptics firefox rxvt-unicode urxvt-perls --noconfirm --needed
 	X -configure
 	if [ -f "$HOME"/xorg.conf.new ]; then
 		mv "$HOME"/xorg.conf.new "$HOME"/xorg.conf
@@ -123,14 +123,14 @@ HardWare() {
 	printf "\033[1m \n\n${yellow}Answer: ${white}\033[0m"
 	read intelstuff
 	if [ "$intelstuff" == Y -o "$intelstuff" == y ]; then
-		pacman -S intel-dri xf86-video-intel --noconfirm
+		pacman -S intel-dri xf86-video-intel --noconfirm --needed
 	else
 		printf "\033[1m \n\n ${green}Are you using AMD ? \n\033[0m"
 		printf "\033[1m \n ${white}[${green}Y${white}|${red}N${white}] \033[0m"
 		printf "\033[1m \n ${yellow}Answer: ${white}\033[0m"
 		read amdstuff
 		if [ "$amdstuff" == Y -o "$amdstuff" == y ]; then
-			pacman -S ati-dri xf86-video-ati --noconfirm
+			pacman -S ati-dri xf86-video-ati --noconfirm --needed
 		fi
 	fi
 }
@@ -155,7 +155,7 @@ BobTheBuilder() {
 		read thatquestion
 		if [ "$thatquestion" == Y -o "$thatquestion" == y ]; then
 			printf "\033[1m\n\n ${green}Setting up pacaur for future use \n\n\033[0m"
-			pacman -Syy expac yajl --noconfirm
+			pacman -Syy expac yajl --noconfirm --needed
 			su builder -c "cd /home/builder && mkdir build-dir && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/cower.tar.gz && tar xzvf cower.tar.gz && cd cower && makepkg -s --skippgpcheck --noconfirm"
 			pacman -U /home/builder/build-dir/cower/*.xz --noconfirm
 			su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/pacaur.tar.gz && tar xzvf pacaur.tar.gz && cd pacaur && makepkg -s --noconfirm"
@@ -176,7 +176,7 @@ UrxvtStuff() {
 	if [ ! -d /home/builder/build-dir ]; then
 		mkdir /home/builder/build-dir
 	fi
-	pacman -Syy zsh-syntax-highlighting git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm
+	pacman -Syy zsh-syntax-highlighting git xorg-xlsfonts flac  gtk3 json-c libasyncns libnotify libogg libpulse libsndfile libvorbis --noconfirm --needed
 	su builder -c "cd /home/builder && cd build-dir && wget https://aur.archlinux.org/cgit/aur.git/snapshot/urxvt-tabbedex.tar.gz && tar xzvf urxvt-tabbedex.tar.gz"
 	su builder -c "cd /home/builder && cd build-dir/urxvt-tabbedex && makepkg -s --noconfirm"
 	pacman -U /home/builder/build-dir/urxvt-tabbedex/*.xz --noconfirm
