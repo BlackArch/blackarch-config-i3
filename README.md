@@ -22,11 +22,10 @@
 - IF THE ABOVE LINK RETURNS NOTHING	... USE THIS
 	wget https://raw.githubusercontent.com/BlackArch/i3-blackarch/master/.scripts-for-setup/setupX
 
-**4.** Run 'source setupX'
+**4.** Run 'chmod +x setupX'
+
+**5.** Run './setupX'
 	
-
-
-
 
 
 			-={ You may want to edit .zshrc :: To help with local completion }=- 
