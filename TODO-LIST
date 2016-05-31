@@ -1,16 +1,16 @@
-1. Change i3 config to match blackarch style. ~ Nearly Done
+1. Change i3 config to match blackarch style. ~ Done
 
-2. Create bash script to install i3 essentials after running blackarch-install. ~ Nearly Done
+2. Create bash script to install i3 essentials after running blackarch-install. ~ Done
 	
 3. Create a menu for all blackarch tools. ~ In Progress
 
 4. Re-erect BLACK-PACKAGE.
 
-5. Write in panel choices for user, xfce-panel/dmenu/j4dmenu choices.
+5. Write in panel choices for user, xfce-panel/dmenu/j4dmenu choices. ~ In Progress
 
-6. Flesh-out urxvt
+6. Flesh-out urxvt ~ In Progress
 
-7. Test setupX & fix bugs related to switching from old blackarch image  ~ DONE
+7. Test setupX & fix bugs related to switching from old blackarch image  ~ Done
 
 8. Call all scripts from one  \\ two at most   ~ Done
 
