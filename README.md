@@ -3,6 +3,9 @@
 - This project aims to provide the user with an i3wm setup on an install of BlackArch linux.
 
 
+- [NOTICE]: Few error checks are done. Please pay attention when running setupX to avoid borked system.
+
+
 
 #Installation
 
@@ -21,6 +24,10 @@
 
 **4.** Run 'source setupX'
 	
-		
+
+
+
+
+
 			-={ You may want to edit .zshrc :: To help with local completion }=- 
 						-={  TIP : SEARCH FOR 'cocky'  in .zshrc }=-
