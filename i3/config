@@ -131,7 +131,7 @@ set_from_resource $xcolor15 color15
 
 # Colors
 # Class                 border          backgr      text            indic
-client.focused          $xcolor6       $xcolor12	$xbackground   $xcolor7
+client.focused          $xcolor6       $xcolor1     $xbackground   $xcolor7
 client.focused_inactive $xcolor6       $xcolor0     $xcolor14
 client.unfocused        $xcolor6       $xcolor0     $xcolor14
 client.urgent           $xbackground   $xcolor9     $xbackground
@@ -180,8 +180,8 @@ bindsym $modkey+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $modkey+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $modkey+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# exit i3 (logs you out of your X session) | Changes was made here.
+#bindsym $modkey+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -218,7 +218,6 @@ bar {
 	position top
 	strip_workspace_numbers yes
 	font pango:xos4 Terminus medium 9
-	height 20
     separator_symbol ")("
     
 	colors {
@@ -227,7 +226,7 @@ bar {
         statusline  $xforeground
         
         #Where              #Border         #Background #Text
-        focused_workspace   $xbackground   $xcolor14  $xbackground
+        focused_workspace   $xbackground   $xcolor1  $xbackground
         urgent_workspace    $xbackground   $xcolor9   $xbackground
         inactive_workspace  $xbackground   $xcolor0   $xforeground
 	}
