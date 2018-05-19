@@ -214,22 +214,22 @@ bindsym $modkey+r mode "resize"
 # finds out, if available)
 bar {
     status_command i3status
-	mode dock
-	position top
-	strip_workspace_numbers yes
-	font pango:xos4 Terminus medium 9
+    mode dock
+    position top
+    strip_workspace_numbers yes
+    font pango:xos4 Terminus medium 9
     separator_symbol ")("
-    
-	colors {
+
+    colors {
         #Where      #Color
         background  $xbackground
         statusline  $xforeground
-        
-        #Where              #Border         #Background #Text
-        focused_workspace   $xbackground   $xcolor1  $xbackground
-        urgent_workspace    $xbackground   $xcolor9   $xbackground
-        inactive_workspace  $xbackground   $xcolor0   $xforeground
-	}
+
+        #Where              #Border         #Background     #Text
+        focused_workspace   $xbackground    $xcolor1        $xbackground
+        urgent_workspace    $xbackground    $xcolor9        $xbackground
+        inactive_workspace  $xbackground    $xcolor0        $xforeground
+    }
 }
 
 # Toggle bar
@@ -246,17 +246,17 @@ set $Locker i3lock -d -c $black0 -f
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, (b) off-screen
 mode "$mode_system" {
-	bindsym l exec --no-startup-id $Locker, mode "default"
-	bindsym e exec --no-startup-id i3-msg exit, mode "default"
-	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
-	bindsym r exec --no-startup-id systemctl reboot, mode "default"
-	bindsym b exec --no-startup-id sleep 1 && xset dpms force off, mode "default"
-	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym l exec --no-startup-id $Locker, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym b exec --no-startup-id sleep 1 && xset dpms force off, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 bindsym $modkey+Shift+e mode "$mode_system"
