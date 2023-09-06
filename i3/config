@@ -43,7 +43,7 @@ bindsym $modkey+Return exec --no-startup-id i3-sensible-terminal
 bindsym $modkey+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $modkey+d exec --no-startup-id rofi -show run
+bindsym $modkey+d exec --no-startup-id rofi -show run -show-icons
 # bindsym $modkey+d exec --no-startup-id dmenu_run
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
